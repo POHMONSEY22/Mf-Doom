@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discografía completa de MF DOOM, el villano enmascarado del hip-hop">
+    <title>Discografía de MF DOOM</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Modak&family=Roboto:wght@400;700;900&family=Poppins:wght@300;400;500;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="img/pngfind.com-mf-doom-png-6742676.png" type="image/x-icon">
+</head>
+
+<body>
+    <!-- Cursor personalizado -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <header class="transparent-header">
+        <nav class="menu">
+            <div class="logo-box">
+                <a href="index.html">
+                    <img src="img/pngfind.com-mf-doom-png-6742676.png" alt="MF DOOM Logo" class="logo">
+                </a>
+            </div>
+            <button class="menu-toggle" aria-label="Abrir menú">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="index.html">INICIO</a></li>
+                <li><a href="Quien_es.html">QUIEN ES MF DOOM</a></li>
+                <li><a href="Discos.html" class="active">DISCOS</a></li>
+                <li><a href="Legado.html">LEGADO</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero section -->
+        <section id="hero" class="hero-v2">
+            <div class="video-container">
+                <video id="bg-video" autoplay muted loop poster="img/img1.jpg">
+                    <source src="video/mf-doom-discos.mp4" type="video/mp4">
+                </video>
+                <div class="overlay"></div>
+            </div>
+            <div class="hero-social">
+                <a href="https://open.spotify.com/intl-es/artist/2pAWfrd7WFF3XhVt9GooDL" class="hero-social-link"
+                    target="_blank" aria-label="Spotify"><i class="fab fa-spotify"></i></a>
+                <a href="https://www.youtube.com/channel/UCzUE_TUQnQj9-9B8nLYQB6Q" class="hero-social-link"
+                    target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                <a href="https://www.instagram.com/mfdoom/" class="hero-social-link" target="_blank"
+                    aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+            <div class="hero-content">
+                <h1 class="hero-title-v2" data-text="DISCOGRAFÍA">DISCOGRAFÍA</h1>
+                <div class="hero-subtitle">La Obra Musical de<span class="hero-subtitle-highlight">MF DOOM</span></div>
+                <div class="hero-quote">"Got more rhymes than the church got 'Ooh Lords'"</div>
+
+                <!-- Botones de navegación -->
+                <div class="hero-nav-buttons">
+                    <a href="index.html" class="hero-nav-button">
+                        <i class="fas fa-home btn-icon"></i>Inicio
+                    </a>
+                    <a href="Quien_es.html" class="hero-nav-button">
+                        <i class="fas fa-user-alt btn-icon"></i>Biografía
+                    </a>
+                    <a href="Legado.html" class="hero-nav-button">
+                        <i class="fas fa-star btn-icon"></i>Legado
+                    </a>
+                </div>
+
+                <div class="hero-scroll-indicator">
+                    <div class="scroll-text">Explora sus álbumes</div>
+                    <div class="scroll-icon"><i class="fas fa-chevron-down"></i></div>
+                </div>
+            </div>
+
+            <div class="hero-years">
+                <div class="year">1999</div>
+                <div class="separator"></div>
+                <div class="year">2020</div>
+            </div>
+        </section>
+
+        <!-- Introducción a la discografía -->
+        <section class="discografia-intro">
+            <div class="container">
+                <h2 class="section-title-v2">El Legado Musical</h2>
+                <div class="discografia-contenido">
+                    <div class="discografia-texto">
+                        <p>La discografía de MF DOOM es un testimonio de su genio creativo y su influencia duradera en el hip-hop. A lo largo de su carrera, DOOM creó un universo musical único, adoptando múltiples alter egos y colaborando con algunos de los productores más innovadores de la escena.</p>
+                        <p>Desde su debut como MF DOOM con "Operation: Doomsday" hasta sus colaboraciones legendarias como Madvillain, cada álbum representa un capítulo esencial en la historia del hip-hop alternativo. Su enfoque único del sampling, sus complejas estructuras líricas y su habilidad para crear conceptos cohesivos lo distinguieron como uno de los artistas más originales del género.</p>
+                    </div>
+                    <div class="discografia-imagen">
+                        <img src="img/img12.jpg" alt="Colección de álbumes de MF DOOM" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Galería de álbumes -->
+        <section class="galeria-albums">
+            <div class="container">
+                <h2 class="section-title-v2">Álbumes Esenciales</h2>
+                <div class="albums-container">
+                    <!-- Operation: Doomsday -->
+                    <div class="album">
+                        <div class="album-cover">
+                            <img src="img/operation-doomsday.jpg" alt="Operation: Doomsday" loading="lazy">
+                            <div class="album-info">
+                                <i class="fas fa-calendar-alt"></i> 1999
+                            </div>
+                        </div>
+                        <div class="album-tracks">
+                            <h3>Operation: Doomsday <span class="spotify-streams"><i class="fab fa-spotify"></i> 45M+</span></h3>
+                            <ol>
+                                <li>
+                                    <div class="track-info">
+                                        <span>The Time We Faced Doom</span>
+                                        <span class="track-streams"><i class="fab fa-spotify"></i> 2.5M</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="track-info">
+                                        <span>Doomsday</span>
+                                        <span class="track-streams"><i class="fab fa-spotify"></i> 15M</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="track-info">
+                                        <span>Rhymes Like Dimes</span>
+                                        <span class="track-streams"><i class="fab fa-spotify"></i> 12M</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="track-info">
+                                        <span>The Finest</span>
+                                        <span class="track-streams"><i class="fab fa-spotify"></i> 3.2M</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="track-info">
+                                        <span>Back in the Days</span>
+                                        <span class="track-streams"><i class="fab fa-spotify"></i> 2.1M</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="track-info">
+                                        <span>Go with the Flow</span>
+                                        <span class="track-streams"><i class="fab fa-spotify"></i> 1.8M</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="track-info">
+                                        <span>Tick, Tick...</span>
+                                        <span class="track-streams"><i class="fab fa-spotify"></i> 2.3M</span>
+                                    </div>
+                                </li>
+                            </ol>
+                            <a href="https://open.spotify.com/album/6TAYYxuNIEQn3iMBSYqBgT" class="spotify-link" target="_blank">
+                                <i class="fab fa-spotify"></i> Escuchar en Spotify
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- MM.. FOOD -->
+                    <div class="album">
+                        <div class="album-cover">
+                            <img src="img/Mmfood.jpg" alt="MM.. FOOD" loading="lazy">
+                            <div class="album-info">
+                                <i class="fas fa-calendar-alt"></i> 2004
+                            </div>
+                        </div>
+                        <div class="album-tracks">
+                            <h3>MM.. FOOD <span class="spotify-streams"><i class="fab fa-spotify"></i> 60M+</span></h3>
+                            <ol>
+                                <li>
+                                    <div class="track-info">
+                                        <span>Beef Rapp</span>
+                                        <span class="track-streams"><i class="fab fa-spotify"></i> 5.2M</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="track-info">
+                                        <span>Hoe Cakes</span>
+                                        <span class="track-streams"><i class="fab fa-spotify"></i> 7.8M</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="track-info">
+                                        <span>Potholderz</span>
+                                        <span class="track-streams"><i class="fab fa-spotify"></i> 4.5M</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="track-info">
+                                        <span>One Beer</span>
+                                        <span class="track-streams"><i class="fab fa-spotify"></i> 18M</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="track-info">
+                                        <span>Deep Fried Frenz</span>
+                                        <span class="track-streams"><i class="fab fa-spotify"></i> 8.3M</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="track-info">
+                                        <span>Kon Karne</span>
+                                        <span class="track-streams"><i class="fab fa-spotify"></i> 5.1M</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="track-info">
+                                        <span>Guinnesses</span>
+                                        <span class="track-streams"><i class="fab fa-spotify"></i> 3.7M</span>
+                                    </div>
+                                </li>
+                            </ol>
+                            <a href="https://open.spotify.com/album/1UcS2nqUhxrZjrBZ3tHk2N" class="spotify-link" target="_blank">
+                                <i class="fab fa-spotify"></i> Escuchar en Spotify
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Madvillainy -->
+                    <div class="album">
+                        <div class="album-cover">
+                            <img src="img/madvillainy.jpg" alt="Madvillainy" loading="lazy">
+                            <div class="album-info">
+                                <i class="fas fa-calendar-alt"></i> 2004
+                            </div>
+                        </div>
+                        <div class="album-tracks">
+                            <h3>Madvillainy <span class="spotify-streams"><i class="fab fa-spotify"></i> 120M+</span></h3>
+                            <ol>
+                                <li>
+                                    <div class="track-info">
+                                        <span>Accordion</span>
+                                        <span class="track-streams"><i class="fab fa-spotify"></i> 35M</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="track-info">
+                                        <span>Meat Grinder</span>
+                                        <span class="track-streams"><i class="fab fa-spotify"></i> 25M</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="track-info">
+                                        <span>Bistro</span>
+                                        <span class="track-streams"><i class="fab fa-spotify"></i> 5.1M</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="track-info">
+                                        <span>Raid</span>
+                                        <span class="track-streams"><i class="fab fa-spotify"></i> 8.7M</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="track-info">
+                                        <span>America's Most Blunted</span>
+                                        <span class="track-streams"><i class="fab fa-spotify"></i> 12M</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="track-info">
+                                        <span>Figaro</span>
+                                        <span class="track-streams"><i class="fab fa-spotify"></i> 15M</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="track-info">
+                                        <span>All Caps</span>
+                                        <span class="track-streams"><i class="fab fa-spotify"></i> 30M</span>
+                                    </div>
+                                </li>
+                            </ol>
+                            <a href="https://open.spotify.com/album/01FCoGEQ3NFWF4fHJkwiUI" class="spotify-link" target="_blank">
+                                <i class="fab fa-spotify"></i> Escuchar en Spotify
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Take Me To Your Leader -->
+                    <div class="album">
+                        <div class="album-cover">
+                            <img src="img/take me to.jpg" alt="Take Me To Your Leader" loading="lazy">
+                            <div class="album-info">
+                                <i class="fas fa-calendar-alt"></i> 2003
+                            </div>
+                        </div>
+                        <div class="album-tracks">
+                            <h3>Take Me To Your Leader <span class="spotify-streams"><i class="fab fa-spotify"></i> 25M+</span></h3>
+                            <ol>
+                                <li>
+                                    <div class="track-info">
+                                        <span>Fazers</span>
+                                        <span class="track-streams"><i class="fab fa-spotify"></i> 8.5M</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="track-info">
+                                        <span>Krazy World</span>
+                                        <span class="track-streams"><i class="fab fa-spotify"></i> 3.2M</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="track-info">
+                                        <span>The Final Hour</span>
+                                        <span class="track-streams"><i class="fab fa-spotify"></i> 2.8M</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="track-info">
+                                        <span>Monster Zero</span>
+                                        <span class="track-streams"><i class="fab fa-spotify"></i> 2.1M</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="track-info">
+                                        <span>Next Levels</span>
+                                        <span class="track-streams"><i class="fab fa-spotify"></i> 4.3M</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="track-info">
+                                        <span>Anti-Matter</span>
+                                        <span class="track-streams"><i class="fab fa-spotify"></i> 5.7M</span>
+                                    </div>
+                                </li>
+                            </ol>
+                            <a href="https://open.spotify.com/album/3j1xCJdBMCl6wYQXurz2tb" class="spotify-link" target="_blank">
+                                <i class="fab fa-spotify"></i> Escuchar en Spotify
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Vaudeville Villain -->
+                    <div class="album">
+                        <div class="album-cover">
+                            <img src="img/Vaudevillevillainjpg.jpg" alt="Vaudeville Villain" loading="lazy">
+                            <div class="album-info">
+                                <i class="fas fa-calendar-alt"></i> 2003
+                            </div>
+                        </div>
+                        <div class="album-tracks">
+                            <h3>Vaudeville Villain <span class="spotify-streams"><i class="fab fa-spotify"></i> 30M+</span></h3>
+                            <ol>
+                                <li>
+                                    <div class="track-info">
+                                        <span>Vaudeville Villain</span>
+                                        <span class="track-streams"><i class="fab fa-spotify"></i> 7.2M</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="track-info">
+                                        <span>Lickupon</span>
+                                        <span class="track-streams"><i class="fab fa-spotify"></i> 3.8M</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="track-info">
+                                        <span>The Drop</span>
+                                        <span class="track-streams"><i class="fab fa-spotify"></i> 4.5M</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="track-info">
+                                        <span>Lactose and Lecithin</span>
+                                        <span class="track-streams"><i class="fab fa-spotify"></i> 2.9M</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="track-info">
+                                        <span>A Dead Mouse</span>
+                                        <span class="track-streams"><i class="fab fa-spotify"></i> 2.3M</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="track-info">
+                                        <span>Let Me Watch</span>
+                                        <span class="track-streams"><i class="fab fa-spotify"></i> 8.1M</span>
+                                    </div>
+                                </li>
+                            </ol>
+                            <a href="https://open.spotify.com/album/0FZK97MXMm5mUQ8mtudjuK" class="spotify-link" target="_blank">
+                                <i class="fab fa-spotify"></i> Escuchar en Spotify
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Born Like This -->
+                    <div class="album">
+                        <div class="album-cover">
+                            <img src="img/born-like-this.jpg" alt="Born Like This" loading="lazy">
+                            <div class="album-info">
+                                <i class="fas fa-calendar-alt"></i> 2009
+                            </div>
+                        </div>
+                        <div class="album-tracks">
+                            <h3>Born Like This <span class="spotify-streams"><i class="fab fa-spotify"></i> 20M+</span></h3>
+                            <ol>
+                                <li>
+                                    <div class="track-info">
+                                        <span>Supervillain Intro</span>
+                                        <span class="track-streams"><i class="fab fa-spotify"></i> 1.8M</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="track-info">
+                                        <span>Gazzillion Ear</span>
+                                        <span class="track-streams"><i class="fab fa-spotify"></i> 6.5M</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="track-info">
+                                        <span>Ballskin</span>
+                                        <span class="track-streams"><i class="fab fa-spotify"></i> 3.2M</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="track-info">
+                                        <span>Yessir!</span>
+                                        <span class="track-streams"><i class="fab fa-spotify"></i> 2.7M</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="track-info">
+                                        <span>Absolutely</span>
+                                        <span class="track-streams"><i class="fab fa-spotify"></i> 3.1M</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="track-info">
+                                        <span>That's That</span>
+                                        <span class="track-streams"><i class="fab fa-spotify"></i> 5.8M</span>
+                                    </div>
+                                </li>
+                            </ol>
+                            <a href="https://open.spotify.com/album/6Vn8F9Kx9IgDhVN5c9yoNM" class="spotify-link" target="_blank">
+                                <i class="fab fa-spotify"></i> Escuchar en Spotify
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de colaboraciones -->
+        <section class="collaborations-section">
+            <div class="container">
+                <h2 class="section-title-v2">PROYECTOS COLABORATIVOS</h2>
+                <div class="collab-grid">
+                    <div class="collab-card">
+                        <div class="collab-artists">
+                            <div class="collab-artist">
+                                <img src="img/mfdoom.jpg" alt="MF DOOM">
+                                <span>MF DOOM</span>
+                            </div>
+                            <div class="collab-plus"><i class="fas fa-plus"></i></div>
+                            <div class="collab-artist">
+                                <img src="img/madlib-collab.jpg" alt="Madlib">
+                                <span>Madlib</span>
+                            </div>
+                        </div>
+                        <div class="collab-info">
+                            <h3>Madvillain</h3>
+                            <p>La colaboración entre DOOM y Madlib dio como resultado "Madvillainy" (2004), considerado por muchos como uno de los mejores álbumes de hip-hop de todos los tiempos.</p>
+                            <div class="collab-quote">
+                                <p>"America's Most Blunted"</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="collab-card">
+                        <div class="collab-artists">
+                            <div class="collab-artist">
+                                <img src="img/mfdoom.jpg" alt="MF DOOM">
+                                <span>MF DOOM</span>
+                            </div>
+                            <div class="collab-plus"><i class="fas fa-plus"></i></div>
+                            <div class="collab-artist">
+                                <img src="img/danger-mouse-collab.jpg" alt="Danger Mouse">
+                                <span>Danger Mouse</span>
+                            </div>
+                        </div>
+                        <div class="collab-info">
+                            <h3>DANGERDOOM</h3>
+                            <p>DOOM se unió al productor Danger Mouse para crear "The Mouse and the Mask" (2005), un álbum que incorporaba personajes de Adult Swim.</p>
+                            <div class="collab-quote">
+                                <p>"Sofa King"</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="collab-card">
+                        <div class="collab-artists">
+                            <div class="collab-artist">
+                                <img src="img/mfdoom.jpg" alt="MF DOOM">
+                                <span>MF DOOM</span>
+                            </div>
+                            <div class="collab-plus"><i class="fas fa-plus"></i></div>
+                            <div class="collab-artist">
+                                <img src="img/jj-doom-collab.jpg" alt="Jneiro Jarel">
+                                <span>Jneiro Jarel</span>
+                            </div>
+                        </div>
+                        <div class="collab-info">
+                            <h3>JJ DOOM</h3>
+                            <p>DOOM colaboró con el productor Jneiro Jarel para crear "Key to the Kuffs" (2012), un álbum experimental grabado durante su estancia en Londres.</p>
+                            <div class="collab-quote">
+                                <p>"Guv'nor"</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="collab-card">
+                        <div class="collab-artists">
+                            <div class="collab-artist">
+                                <img src="img/mfdoom.jpg" alt="MF DOOM">
+                                <span>MF DOOM</span>
+                            </div>
+                            <div class="collab-plus"><i class="fas fa-plus"></i></div>
+                            <div class="collab-artist">
+                                <img src="img/czarface-collab.jpg" alt="Czarface">
+                                <span>Czarface</span>
+                            </div>
+                        </div>
+                        <div class="collab-info">
+                            <h3>CZARFACE Meets Metal Face</h3>
+                            <p>DOOM se unió al supergrupo Czarface (Inspectah Deck, 7L & Esoteric) para un álbum colaborativo lanzado en 2018.</p>
+                            <div class="collab-quote">
+                                <p>"Nautical Depth"</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de análisis lírico -->
+        <section class="analisis-lirico-v2">
+            <div class="container">
+                <h2 class="section-title-v2">ANÁLISIS LÍRICO</h2>
+                <div class="analisis-intro">
+                    <p>MF DOOM es reconocido por su compleja estructura lírica, su ingenioso uso de referencias culturales y su habilidad para crear imágenes vívidas a través de sus rimas. A continuación, analizamos algunas de sus letras más emblemáticas.</p>
+                </div>
+
+                <div class="analisis-container">
+                    <div class="analisis-track">
+                        <div class="track-info">
+                            <div>
+                                <h3>Accordion</h3>
+                                <div class="track-album">Madvillainy (2004)</div>
+                            </div>
+                        </div>
+                        <div class="track-lyrics">
+                            <div class="lyric-line">
+                                <div class="lyric-text">"Living off borrowed time, the clock tick faster"</div>
+                                <div class="lyric-analysis">
+                                    <p>Esta línea refleja la conciencia de DOOM sobre la fugacidad de la vida, especialmente tras la muerte de su hermano. La metáfora del "tiempo prestado" sugiere que cada momento es valioso y que el tiempo avanza inexorablemente.</p>
+                                    <p>También puede interpretarse como una referencia a su carrera musical, que experimentó un renacimiento después de años de ausencia, como si hubiera recibido una segunda oportunidad.</p>
+                                </div>
+                            </div>
+                            <div class="lyric-line">
+                                <div class="lyric-text">"That's why he bring his own needles, and get more cheese than Doritos, Cheetos or Fritos"</div>
+                                <div class="lyric-analysis">
+                                    <p>DOOM utiliza un juego de palabras ingenioso aquí. "Cheese" es una jerga para dinero, mientras que la referencia a diferentes marcas de snacks crea una imagen vívida y memorable.</p>
+                                    <p>Esta línea también muestra su habilidad para encadenar referencias culturales populares con metáforas sobre la industria musical, creando múltiples capas de significado en una sola frase.</p>
+                                </div>
+                            </div>
+                            <div class="lyric-line">
+                                <div class="lyric-text">"Slip like Freudian, your first and last step to playing yourself like accordion"</div>
+                                <div class="lyric-analysis">
+                                    <p>DOOM hace referencia al concepto freudiano del "lapsus" o desliz, sugiriendo que sus oponentes cometen errores reveladores. La comparación con el acordeón es brillante: así como este instrumento se pliega sobre sí mismo, sus rivales "se juegan a sí mismos", autodestruyéndose.</p>
+                                    <p>Esta línea ejemplifica la capacidad de DOOM para entretejer referencias intelectuales con metáforas musicales, elevando el nivel lírico del hip-hop.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="analisis-track">
+                        <div class="track-info">
+                            <div>
+                                <h3>Doomsday</h3>
+                                <div class="track-album">Operation: Doomsday (1999)</div>
+                            </div>
+                        </div>
+                        <div class="track-lyrics">
+                            <div class="lyric-line">
+                                <div class="lyric-text">"On Doomsday, ever since the womb 'til I'm back where my brother went, that's what my tomb will say"</div>
+                                <div class="lyric-analysis">
+                                    <p>Esta línea profundamente personal hace referencia a la muerte de su hermano DJ Subroc. DOOM reflexiona sobre su propia mortalidad y expresa el deseo de reunirse con su hermano después de la muerte.</p>
+                                    <p>El uso de "Doomsday" (día del juicio final) como título de la canción y como referencia temporal crea una atmósfera apocalíptica que refleja el estado emocional de DOOM tras la pérdida de su hermano.</p>
+                                </div>
+                            </div>
+                            <div class="lyric-line">
+                                <div class="lyric-text">"Got more soul than a sock with a hole"</div>
+                                <div class="lyric-analysis">
+                                    <p>Esta línea aparentemente simple demuestra el ingenio de DOOM para crear símiles inesperados. Juega con la palabra "sole" (suela) y "soul" (alma), creando un juego de palabras que funciona tanto visual como fonéticamente.</p>
+                                    <p>La imagen de un calcetín con un agujero es mundana pero efectiva, contrastando con la profundidad espiritual que DOOM afirma poseer, creando así una yuxtaposición entre lo banal y lo trascendental.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+      <!-- Nueva sección: Discos Más Escuchados -->
+      <section class="top-albums-section">
+          <div class="container">
+              <h2 class="section-title-v2">LOS MÁS ESCUCHADOS</h2>
+              <div class="top-albums-intro">
+                  <p>Estos son los álbumes y canciones de MF DOOM con mayor número de reproducciones en plataformas digitales actualmente, demostrando la permanencia de su legado musical a través del tiempo.</p>
+              </div>
+              
+              <div class="top-albums-grid">
+                  <!-- Madvillainy -->
+                  <div class="top-album-card">
+                      <div class="top-album-rank">01</div>
+                      <div class="top-album-cover">
+                          <img src="img/madvillainy.jpg" alt="Madvillainy" loading="lazy">
+                          <div class="top-album-play">
+                              <i class="fas fa-play"></i>
+                          </div>
+                      </div>
+                      <div class="top-album-info">
+                          <h3>Madvillainy</h3>
+                          <div class="top-album-artist">Madvillain (MF DOOM & Madlib)</div>
+                          <div class="top-album-year">2004</div>
+                          <div class="top-album-stats">
+                              <div class="stat">
+                                  <i class="fab fa-spotify"></i>
+                                  <span>320M+ reproducciones</span>
+                              </div>
+                              <div class="stat">
+                                  <i class="fab fa-youtube"></i>
+                                  <span>150M+ visualizaciones</span>
+                              </div>
+                          </div>
+                          <div class="top-album-tracks">
+                              <div class="top-track">
+                                  <div class="top-track-name">Accordion</div>
+                                  <div class="top-track-streams">85M+</div>
+                              </div>
+                              <div class="top-track">
+                                  <div class="top-track-name">All Caps</div>
+                                  <div class="top-track-streams">75M+</div>
+                              </div>
+                              <div class="top-track">
+                                  <div class="top-track-name">Meat Grinder</div>
+                                  <div class="top-track-streams">65M+</div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  
+                  <!-- MM.. FOOD -->
+                  <div class="top-album-card">
+                      <div class="top-album-rank">02</div>
+                      <div class="top-album-cover">
+                          <img src="img/Mmfood.jpg" alt="MM.. FOOD" loading="lazy">
+                          <div class="top-album-play">
+                              <i class="fas fa-play"></i>
+                          </div>
+                      </div>
+                      <div class="top-album-info">
+                          <h3>MM.. FOOD</h3>
+                          <div class="top-album-artist">MF DOOM</div>
+                          <div class="top-album-year">2004</div>
+                          <div class="top-album-stats">
+                              <div class="stat">
+                                  <i class="fab fa-spotify"></i>
+                                  <span>210M+ reproducciones</span>
+                              </div>
+                              <div class="stat">
+                                  <i class="fab fa-youtube"></i>
+                                  <span>95M+ visualizaciones</span>
+                              </div>
+                          </div>
+                          <div class="top-album-tracks">
+                              <div class="top-track">
+                                  <div class="top-track-name">Rapp Snitch Knishes</div>
+                                  <div class="top-track-streams">60M+</div>
+                              </div>
+                              <div class="top-track">
+                                  <div class="top-track-name">One Beer</div>
+                                  <div class="top-track-streams">45M+</div>
+                              </div>
+                              <div class="top-track">
+                                  <div class="top-track-name">Deep Fried Frenz</div>
+                                  <div class="top-track-streams">30M+</div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  
+                  <!-- Operation: Doomsday -->
+                  <div class="top-album-card">
+                      <div class="top-album-rank">03</div>
+                      <div class="top-album-cover">
+                          <img src="img/operation-doomsday.jpg" alt="Operation: Doomsday" loading="lazy">
+                          <div class="top-album-play">
+                              <i class="fas fa-play"></i>
+                          </div>
+                      </div>
+                      <div class="top-album-info">
+                          <h3>Operation: Doomsday</h3>
+                          <div class="top-album-artist">MF DOOM</div>
+                          <div class="top-album-year">1999</div>
+                          <div class="top-album-stats">
+                              <div class="stat">
+                                  <i class="fab fa-spotify"></i>
+                                  <span>180M+ reproducciones</span>
+                              </div>
+                              <div class="stat">
+                                  <i class="fab fa-youtube"></i>
+                                  <span>85M+ visualizaciones</span>
+                              </div>
+                          </div>
+                          <div class="top-album-tracks">
+                              <div class="top-track">
+                                  <div class="top-track-name">Doomsday</div>
+                                  <div class="top-track-streams">55M+</div>
+                              </div>
+                              <div class="top-track">
+                                  <div class="top-track-name">Rhymes Like Dimes</div>
+                                  <div class="top-track-streams">40M+</div>
+                              </div>
+                              <div class="top-track">
+                                  <div class="top-track-name">Gas Drawls</div>
+                                  <div class="top-track-streams">20M+</div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  
+                  <!-- The Mouse and the Mask -->
+                  <div class="top-album-card">
+                      <div class="top-album-rank">04</div>
+                      <div class="top-album-cover">
+                          <img src="img/danger-mouse-collab.jpg" alt="The Mouse and the Mask" loading="lazy">
+                          <div class="top-album-play">
+                              <i class="fas fa-play"></i>
+                          </div>
+                      </div>
+                      <div class="top-album-info">
+                          <h3>The Mouse and the Mask</h3>
+                          <div class="top-album-artist">DANGERDOOM (MF DOOM & Danger Mouse)</div>
+                          <div class="top-album-year">2005</div>
+                          <div class="top-album-stats">
+                              <div class="stat">
+                                  <i class="fab fa-spotify"></i>
+                                  <span>120M+ reproducciones</span>
+                              </div>
+                              <div class="stat">
+                                  <i class="fab fa-youtube"></i>
+                                  <span>60M+ visualizaciones</span>
+                              </div>
+                          </div>
+                          <div class="top-album-tracks">
+                              <div class="top-track">
+                                  <div class="top-track-name">Sofa King</div>
+                                  <div class="top-track-streams">35M+</div>
+                              </div>
+                              <div class="top-track">
+                                  <div class="top-track-name">Benzie Box</div>
+                                  <div class="top-track-streams">25M+</div>
+                              </div>
+                              <div class="top-track">
+                                  <div class="top-track-name">Space Hos</div>
+                                  <div class="top-track-streams">15M+</div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              
+              <div class="streaming-growth">
+                  <h3>Crecimiento en Plataformas Digitales</h3>
+                  <div class="growth-stats">
+                      <div class="growth-stat">
+                          <div class="growth-icon"><i class="fas fa-chart-line"></i></div>
+                          <div class="growth-number">+215%</div>
+                          <div class="growth-label">Aumento en reproducciones desde 2020</div>
+                      </div>
+                      <div class="growth-stat">
+                          <div class="growth-icon"><i class="fas fa-user-plus"></i></div>
+                          <div class="growth-number">+180%</div>
+                          <div class="growth-label">Nuevos oyentes mensuales</div>
+                      </div>
+                      <div class="growth-stat">
+                          <div class="growth-icon"><i class="fas fa-globe-americas"></i></div>
+                          <div class="growth-number">120+</div>
+                          <div class="growth-label">Países con oyentes activos</div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </section>
+
+        <!-- Call to Action -->
+        <section class="call-to-action">
+            <div class="container">
+                <div class="cta-content">
+                    <h2>Descubre el impacto de su música</h2>
+                    <p>Explora cómo MF DOOM transformó el hip-hop y dejó un legado imborrable</p>
+                    <div class="cta-buttons">
+                        <a href="Legado.html" class="cta-button primary">Explorar su legado</a>
+                        <a href="Quien_es.html" class="cta-button secondary">Conocer su historia</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer-v2">
+        <div class="footer-main">
+            <div class="container">
+                <div class="footer-logo">
+                    <img src="img/pngfind.com-mf-doom-png-6742676.png" alt="MF DOOM Logo" class="logo">
+                    <p class="footer-tagline">La leyenda continúa</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-nav">
+                        <h3>Navegación</h3>
+                        <ul>
+                            <li><a href="index.html">Inicio</a></li>
+                            <li><a href="Quien_es.html">Biografía</a></li>
+                            <li><a href="Discos.html">Discografía</a></li>
+                            <li><a href="Legado.html">Legado</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-social">
+                        <h3>Redes Sociales</h3>
+                        <div class="social-links">
+                            <a href="https://www.facebook.com/mfdoom/?locale=es_LA" class="social-icon" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                            <a href="https://x.com/mfdoom?lang=es" class="social-icon" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="https://www.instagram.com/mfdoom/" class="social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="https://open.spotify.com/artist/2pAWfrd7WFF3XhVt9GooDL" class="social-icon" aria-label="Spotify"><i class="fab fa-spotify"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p class="footer-copyright">Creado por JP / 2024</p>
+                <p class="footer-tribute">En memoria de Daniel Dumile (1971-2020)</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
+
