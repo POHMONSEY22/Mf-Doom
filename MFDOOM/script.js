@@ -1186,4 +1186,989 @@ document.addEventListener("DOMContentLoaded", () => {
     initTimeline();
     initImpactStats();
   });
+  document.addEventListener('DOMContentLoaded', () => {
+    const gallery = document.querySelector('.mask-gallery');
+    const prevBtn = document.querySelector('.prev-mask');
+    const nextBtn = document.querySelector('.next-mask');
+    
+    prevBtn.addEventListener('click', () => {
+        gallery.scrollBy({
+            left: -300,
+            behavior: 'smooth'
+        });
+    });
+    
+    nextBtn.addEventListener('click', () => {
+        gallery.scrollBy({
+            left: 300,
+            behavior: 'smooth'
+        });
+    });
+  });
+  
+});
+
+// Script para la sección Universo Sonoro
+document.addEventListener("DOMContentLoaded", () => {
+  // Funcionalidad para el vinilo
+  const vinylRecord = document.querySelector(".vinyl-record")
+  const playSampleButtons = document.querySelectorAll(".play-sample")
+  const viewSampleButtons = document.querySelectorAll(".view-sample")
+
+  // Función para reproducir/pausar el vinilo
+  function toggleVinylPlay() {
+    vinylRecord.classList.toggle("playing")
+  }
+
+  // Añadir evento de clic al vinilo
+  if (vinylRecord) {
+    vinylRecord.addEventListener("click", toggleVinylPlay)
+  }
+
+  // Añadir eventos a los botones de reproducción
+  playSampleButtons.forEach((button) => {
+    button.addEventListener("click", function () {
+      // Activar animación del vinilo
+      vinylRecord.classList.add("playing")
+
+      // Cambiar el ícono del botón
+      const icon = this.querySelector("i")
+      if (icon.classList.contains("fa-play")) {
+        // Restablecer todos los botones primero
+        playSampleButtons.forEach((btn) => {
+          btn.querySelector("i").classList.remove("fa-pause")
+          btn.querySelector("i").classList.add("fa-play")
+          btn.textContent = " Escuchar Sample"
+        })
+
+        // Configurar este botón como reproduciendo
+        icon.classList.remove("fa-play")
+        icon.classList.add("fa-pause")
+        this.innerHTML = '<i class="fas fa-pause"></i> Pausar'
+      } else {
+        // Pausar reproducción
+        icon.classList.remove("fa-pause")
+        icon.classList.add("fa-play")
+        this.innerHTML = '<i class="fas fa-play"></i> Escuchar Sample'
+        vinylRecord.classList.remove("playing")
+      }
+
+      // Aquí se podría añadir código para reproducir el audio real
+      console.log("Reproduciendo/Pausando sample")
+    })
+  })
+
+  // Añadir eventos a los botones de ver detalles
+  viewSampleButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      // Aquí se podría mostrar un modal con detalles del sample
+      alert("Detalles del sample: Esta funcionalidad se implementará próximamente.")
+    })
+  })
+
+  // Efecto de parallax para el vinilo
+  window.addEventListener("mousemove", (e) => {
+    if (!vinylRecord) return
+
+    const mouseX = e.clientX / window.innerWidth
+    const mouseY = e.clientY / window.innerHeight
+
+    const moveX = (mouseX - 0.5) * 20
+    const moveY = (mouseY - 0.5) * 20
+
+    vinylRecord.style.transform = `translate(${moveX}px, ${moveY}px) ${vinylRecord.classList.contains("playing") ? "rotate(0deg)" : ""}`
+  })
+
+  // Animación de entrada para el vinilo
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = "1"
+          entry.target.style.transform = "translateY(0)"
+          observer.unobserve(entry.target)
+        }
+      })
+    },
+    { threshold: 0.1 },
+  )
+
+  if (vinylRecord) {
+    vinylRecord.style.opacity = "0"
+    vinylRecord.style.transform = "translateY(50px)"
+    vinylRecord.style.transition = "opacity 1s ease, transform 1s ease"
+    observer.observe(vinylRecord)
+  }
+
+  // Animación para las tarjetas de samples
+  const sampleCards = document.querySelectorAll(".sample-card")
+  sampleCards.forEach((card, index) => {
+    card.style.opacity = "0"
+    card.style.transform = "translateY(50px)"
+    card.style.transition = `opacity 0.8s ease ${index * 0.2}s, transform 0.8s ease ${index * 0.2}s`
+    observer.observe(card)
+  })
+})
+
+// Script para la sección Técnica Lírica Moderna
+document.addEventListener("DOMContentLoaded", () => {
+  // Inicializar elementos
+  initVinylPlayer()
+  initTechniqueCards()
+  initStatCounters()
+  initVerseExplorer()
+
+  // Añadir gradiente SVG para los círculos de progreso
+  const svgGradient = `
+        <svg width="0" height="0">
+            <defs>
+                <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stop-color="#ffd700" />
+                    <stop offset="100%" stop-color="#ff9500" />
+                </linearGradient>
+            </defs>
+        </svg>
+    `
+  document.body.insertAdjacentHTML("beforeend", svgGradient)
+})
+
+// Funcionalidad para el reproductor de vinilo
+function initVinylPlayer() {
+  const playBtn = document.querySelector(".tl-play-btn")
+  const vinyl = document.querySelector(".tl-vinyl")
+  const audioWave = document.querySelector(".tl-audio-wave")
+
+  if (!playBtn || !vinyl || !audioWave) return
+
+  playBtn.addEventListener("click", function () {
+    const isPlaying = vinyl.classList.contains("playing")
+
+    if (isPlaying) {
+      vinyl.classList.remove("playing")
+      audioWave.classList.remove("playing")
+      this.innerHTML = '<i class="fas fa-play"></i><span>Reproducir Verso</span>'
+    } else {
+      vinyl.classList.add("playing")
+      audioWave.classList.add("playing")
+      this.innerHTML = '<i class="fas fa-pause"></i><span>Pausar</span>'
+
+      // Simular reproducción de audio (aquí se podría implementar un reproductor real)
+      console.log("Reproduciendo audio...")
+    }
+  })
+
+  // Efecto hover para las partículas de letras
+  const lyricParticles = document.querySelectorAll(".tl-lyric-particle")
+  lyricParticles.forEach((particle) => {
+    particle.addEventListener("click", function () {
+      // Resaltar la partícula seleccionada
+      lyricParticles.forEach((p) => p.classList.remove("active"))
+      this.classList.add("active")
+
+      // Reproducir el fragmento de audio correspondiente (simulado)
+      console.log(`Reproduciendo fragmento: ${this.textContent.trim()}`)
+    })
+  })
+}
+
+// Funcionalidad para las tarjetas de técnicas
+function initTechniqueCards() {
+  const listenButtons = document.querySelectorAll(".tl-listen-btn")
+
+  listenButtons.forEach((button) => {
+    button.addEventListener("click", function (e) {
+      e.stopPropagation() // Evitar que el clic voltee la tarjeta
+
+      // Cambiar el estado del botón
+      const icon = this.querySelector("i")
+      const text = this.querySelector("span")
+
+      if (icon.classList.contains("fa-volume-up")) {
+        icon.classList.remove("fa-volume-up")
+        icon.classList.add("fa-volume-mute")
+        text.textContent = "Detener"
+
+        // Simular reproducción de audio
+        console.log(`Reproduciendo ejemplo de ${this.closest(".tl-card-back").querySelector("h4").textContent}`)
+      } else {
+        icon.classList.remove("fa-volume-mute")
+        icon.classList.add("fa-volume-up")
+        text.textContent = "Escuchar"
+
+        // Detener reproducción
+        console.log("Deteniendo reproducción")
+      }
+    })
+  })
+}
+
+// Funcionalidad para los contadores de estadísticas
+function initStatCounters() {
+  const statItems = document.querySelectorAll(".tl-stat-item")
+
+  // Configurar el observador de intersección
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const statItem = entry.target
+          const targetValue = Number.parseFloat(statItem.getAttribute("data-value"))
+          const counter = statItem.querySelector(".tl-stat-counter")
+          const progressCircle = statItem.querySelector(".tl-progress-fill")
+
+          // Animar el contador
+          animateCounter(counter, targetValue)
+
+          // Animar el círculo de progreso
+          if (progressCircle) {
+            const circumference = 2 * Math.PI * 45 // 2πr donde r=45
+            progressCircle.style.strokeDasharray = circumference
+
+            // Calcular el porcentaje para el círculo (máximo 100%)
+            let percentage
+            if (targetValue > 1000) {
+              percentage = targetValue / 10000 // Para valores grandes como 8000
+            } else if (targetValue > 100) {
+              percentage = targetValue / 1500 // Para valores medianos como 1200
+            } else {
+              percentage = targetValue / 10 // Para valores pequeños como 5.4
+            }
+
+            percentage = Math.min(percentage, 1) // Asegurar que no exceda el 100%
+
+            const dashoffset = circumference * (1 - percentage)
+
+            // Animar el trazo
+            setTimeout(() => {
+              progressCircle.style.strokeDashoffset = dashoffset
+            }, 100)
+          }
+
+          // Dejar de observar después de animar
+          observer.unobserve(statItem)
+        }
+      })
+    },
+    { threshold: 0.2 },
+  )
+
+  // Observar cada elemento de estadística
+  statItems.forEach((item) => {
+    observer.observe(item)
+  })
+}
+
+// Función para animar contadores
+function animateCounter(element, targetValue) {
+  const duration = 2000 // 2 segundos
+  const startTime = Date.now()
+  const isDecimal = targetValue % 1 !== 0
+
+  function updateCounter() {
+    const currentTime = Date.now()
+    const elapsedTime = currentTime - startTime
+    const progress = Math.min(elapsedTime / duration, 1)
+
+    // Usar una función de easing para hacer la animación más natural
+    const easedProgress = easeOutQuart(progress)
+    const currentValue = easedProgress * targetValue
+
+    if (isDecimal) {
+      element.textContent = currentValue.toFixed(1)
+    } else {
+      element.textContent = Math.floor(currentValue) + "+"
+    }
+
+    if (progress < 1) {
+      requestAnimationFrame(updateCounter)
+    } else {
+      // Asegurar que el valor final sea exacto
+      if (isDecimal) {
+        element.textContent = targetValue.toFixed(1)
+      } else {
+        element.textContent = Math.floor(targetValue) + "+"
+      }
+    }
+  }
+
+  updateCounter()
+}
+
+// Función de easing para animaciones más suaves
+function easeOutQuart(x) {
+  return 1 - Math.pow(1 - x, 4)
+}
+
+// Funcionalidad para el explorador de versos
+function initVerseExplorer() {
+  const tabs = document.querySelectorAll(".tl-tab")
+  const tabContents = document.querySelectorAll(".tl-tab-content")
+  const analyzeButtons = document.querySelectorAll(".tl-analyze-btn")
+  const verseAnalysis = document.querySelector(".tl-verse-analysis")
+  const closeAnalysisBtn = document.querySelector(".tl-close-analysis")
+
+  // Cambio de pestañas
+  tabs.forEach((tab) => {
+    tab.addEventListener("click", function () {
+      const tabId = this.getAttribute("data-tab")
+
+      // Actualizar pestañas activas
+      tabs.forEach((t) => t.classList.remove("active"))
+      this.classList.add("active")
+
+      // Mostrar contenido correspondiente
+      tabContents.forEach((content) => {
+        content.classList.remove("active")
+        if (content.id === `${tabId}-content`) {
+          content.classList.add("active")
+        }
+      })
+
+      // Cerrar el panel de análisis si está abierto
+      if (verseAnalysis && verseAnalysis.classList.contains("active")) {
+        verseAnalysis.classList.remove("active")
+      }
+    })
+  })
+
+  // Botones de análisis
+  if (analyzeButtons.length && verseAnalysis) {
+    analyzeButtons.forEach((button) => {
+      button.addEventListener("click", function () {
+        const verseLine = this.closest(".tl-verse-line")
+        const verseText = verseLine.querySelector("p").textContent
+
+        // Mostrar panel de análisis
+        verseAnalysis.classList.add("active")
+
+        // Actualizar contenido del análisis (simulado)
+        console.log(`Analizando verso: ${verseText}`)
+
+        // Aquí se podría implementar un análisis real del verso
+        // y actualizar el contenido del panel con los resultados
+      })
+    })
+  }
+
+  // Cerrar análisis
+  if (closeAnalysisBtn && verseAnalysis) {
+    closeAnalysisBtn.addEventListener("click", () => {
+      verseAnalysis.classList.remove("active")
+    })
+  }
+
+  // Funcionalidad de búsqueda
+  const searchInput = document.querySelector(".tl-explorer-search input")
+  const searchButton = document.querySelector(".tl-explorer-search button")
+
+  if (searchInput && searchButton) {
+    const handleSearch = () => {
+      const searchTerm = searchInput.value.toLowerCase().trim()
+      if (!searchTerm) return
+
+      // Buscar en todas las líneas de verso
+      const verseLines = document.querySelectorAll(".tl-verse-line p")
+      let found = false
+
+      verseLines.forEach((line) => {
+        const text = line.textContent.toLowerCase()
+        const verseLine = line.closest(".tl-verse-line")
+
+        if (text.includes(searchTerm)) {
+          // Resaltar resultados
+          verseLine.style.background = "rgba(255, 215, 0, 0.1)"
+          verseLine.scrollIntoView({ behavior: "smooth", block: "center" })
+          found = true
+        } else {
+          verseLine.style.background = ""
+        }
+      })
+
+      if (!found) {
+        alert("No se encontraron coincidencias")
+      }
+    }
+
+    searchButton.addEventListener("click", handleSearch)
+    searchInput.addEventListener("keypress", (e) => {
+      if (e.key === "Enter") {
+        handleSearch()
+      }
+    })
+  }
+}
+
+// Script para la sección Music Dashboard
+document.addEventListener("DOMContentLoaded", () => {
+  // Inicializar elementos
+  initStatCounters()
+  initMiniCharts()
+  initAlbumCarousel()
+  initTrackPlayers()
+  initGrowthChart()
+  initWorldMap()
+
+  // Inicializar selectores de plataforma
+  const platformButtons = document.querySelectorAll(".md-platform-btn")
+  platformButtons.forEach((button) => {
+    button.addEventListener("click", function () {
+      platformButtons.forEach((btn) => btn.classList.remove("active"))
+      this.classList.add("active")
+
+      const platform = this.getAttribute("data-platform")
+      console.log(`Filtrando por plataforma: ${platform}`)
+      // Aquí se implementaría la lógica para filtrar los datos por plataforma
+    })
+  })
+})
+
+// Función para inicializar los contadores de estadísticas
+function initStatCounters() {
+  const statValues = document.querySelectorAll(".md-stat-value[data-value], .md-growth-value[data-value]")
+
+  // Configurar el observador de intersección
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const element = entry.target
+          const targetValue = Number.parseFloat(element.getAttribute("data-value"))
+          const isPercentage = element.textContent.includes("%")
+          const isPlus = element.textContent.includes("+")
+
+          // Animar el contador
+          animateCounter(element, targetValue, isPercentage, isPlus)
+
+          // Dejar de observar después de animar
+          observer.unobserve(element)
+        }
+      })
+    },
+    { threshold: 0.2 },
+  )
+
+  // Observar cada elemento de estadística
+  statValues.forEach((item) => {
+    observer.observe(item)
+  })
+
+  // Animar las barras de estadísticas
+  const statBars = document.querySelectorAll(".md-stat-bar-fill")
+  const barObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          // Activar la animación de la barra
+          entry.target.style.width = entry.target.style.width
+
+          // Dejar de observar después de animar
+          barObserver.unobserve(entry.target)
+        }
+      })
+    },
+    { threshold: 0.2 },
+  )
+
+  statBars.forEach((bar) => {
+    barObserver.observe(bar)
+  })
+}
+
+// Función para animar contadores
+function animateCounter(element, targetValue, isPercentage, isPlus) {
+  const duration = 2000 // 2 segundos
+  const startTime = Date.now()
+
+  function updateCounter() {
+    const currentTime = Date.now()
+    const elapsedTime = currentTime - startTime
+    const progress = Math.min(elapsedTime / duration, 1)
+
+    // Usar una función de easing para hacer la animación más natural
+    const easedProgress = easeOutQuart(progress)
+    const currentValue = easedProgress * targetValue
+
+    if (isPercentage) {
+      element.textContent = `+${Math.floor(currentValue)}%`
+    } else if (isPlus) {
+      element.textContent = `${Math.floor(currentValue)}+`
+    } else {
+      element.textContent = `${Math.floor(currentValue)}M+`
+    }
+
+    if (progress < 1) {
+      requestAnimationFrame(updateCounter)
+    } else {
+      // Asegurar que el valor final sea exacto
+      if (isPercentage) {
+        element.textContent = `+${Math.floor(targetValue)}%`
+      } else if (isPlus) {
+        element.textContent = `${Math.floor(targetValue)}+`
+      } else {
+        element.textContent = `${Math.floor(targetValue)}M+`
+      }
+    }
+  }
+
+  updateCounter()
+}
+
+// Función de easing para animaciones más suaves
+function easeOutQuart(x) {
+  return 1 - Math.pow(1 - x, 4)
+}
+
+// Función para inicializar los mini gráficos
+function initMiniCharts() {
+  const miniCharts = document.querySelectorAll(".md-mini-chart")
+
+  miniCharts.forEach((canvas, index) => {
+    const ctx = canvas.getContext("2d")
+
+    // Generar datos aleatorios para la demostración
+    const data = generateRandomData(12)
+
+    // Dibujar el mini gráfico
+    drawMiniChart(ctx, data, index)
+  })
+}
+
+// Función para generar datos aleatorios
+function generateRandomData(count) {
+  const data = []
+  for (let i = 0; i < count; i++) {
+    data.push(Math.random() * 50 + 50) // Valores entre 50 y 100
+  }
+  return data
+}
+
+// Función para dibujar mini gráficos
+function drawMiniChart(ctx, data, index) {
+  const width = ctx.canvas.width
+  const height = ctx.canvas.height
+
+  // Limpiar el canvas
+  ctx.clearRect(0, 0, width, height)
+
+  // Configurar el estilo
+  ctx.strokeStyle = index === 0 ? "#ff3d00" : index === 1 ? "#ff9e80" : "#ff6e40"
+  ctx.lineWidth = 2
+  ctx.lineCap = "round"
+  ctx.lineJoin = "round"
+
+  // Comenzar el trazado
+  ctx.beginPath()
+
+  // Calcular el paso horizontal
+  const step = width / (data.length - 1)
+
+  // Dibujar la línea
+  data.forEach((value, i) => {
+    const x = i * step
+    const y = height - (value / 100) * height
+
+    if (i === 0) {
+      ctx.moveTo(x, y)
+    } else {
+      ctx.lineTo(x, y)
+    }
+  })
+
+  // Trazar la línea
+  ctx.stroke()
+
+  // Añadir un gradiente de relleno
+  const gradient = ctx.createLinearGradient(0, 0, 0, height)
+  gradient.addColorStop(0, "rgba(183, 0, 255, 0.2)")
+  gradient.addColorStop(1, "rgba(89, 0, 255, 0)")
+
+  ctx.lineTo(width, height)
+  ctx.lineTo(0, height)
+  ctx.closePath()
+
+  ctx.fillStyle = gradient
+  ctx.fill()
+}
+
+// Función para inicializar el carrusel de álbumes
+function initAlbumCarousel() {
+  const albumItems = document.querySelectorAll(".md-album-item")
+  const prevBtn = document.querySelector(".md-prev-btn")
+  const nextBtn = document.querySelector(".md-next-btn")
+  const currentAlbumElement = document.querySelector(".md-current-album")
+  let currentIndex = 0
+
+  function showAlbum(index) {
+    albumItems.forEach((item, i) => {
+      item.classList.remove("active")
+      if (i === index) {
+        item.classList.add("active")
+      }
+    })
+
+    currentIndex = index
+    currentAlbumElement.textContent = (currentIndex + 1).toString().padStart(2, "0")
+  }
+
+  if (prevBtn && nextBtn) {
+    prevBtn.addEventListener("click", () => {
+      let newIndex = currentIndex - 1
+      if (newIndex < 0) newIndex = albumItems.length - 1
+      showAlbum(newIndex)
+    })
+
+    nextBtn.addEventListener("click", () => {
+      let newIndex = currentIndex + 1
+      if (newIndex >= albumItems.length) newIndex = 0
+      showAlbum(newIndex)
+    })
+  }
+
+  // Inicializar con el primer álbum
+  showAlbum(0)
+}
+
+// Función para inicializar los reproductores de pistas
+function initTrackPlayers() {
+  const playButtons = document.querySelectorAll(".md-play-btn")
+  const trackItems = document.querySelectorAll(".md-track-item")
+
+  // Botones de reproducción de álbum
+  playButtons.forEach((button) => {
+    button.addEventListener("click", function () {
+      const albumId = this.getAttribute("data-album")
+      const albumItem = document.querySelector(`.md-album-item[data-album="${albumId}"]`)
+
+      if (albumItem) {
+        const isPlaying = albumItem.classList.contains("playing")
+
+        // Detener todos los álbumes primero
+        document.querySelectorAll(".md-album-item").forEach((item) => {
+          item.classList.remove("playing")
+        })
+
+        // Detener todas las pistas
+        trackItems.forEach((track) => {
+          track.classList.remove("playing")
+        })
+
+        // Si no estaba reproduciendo, iniciar reproducción
+        if (!isPlaying) {
+          albumItem.classList.add("playing")
+
+          // Cambiar el ícono del botón
+          this.innerHTML = '<i class="fas fa-pause"></i>'
+
+          // Simular reproducción de audio
+          console.log(`Reproduciendo álbum: ${albumId}`)
+        } else {
+          // Restaurar el ícono del botón
+          this.innerHTML = '<i class="fas fa-play"></i>'
+        }
+      }
+    })
+  })
+
+  // Reproducción de pistas individuales
+  trackItems.forEach((track) => {
+    const playBtn = track.querySelector(".md-track-play")
+
+    if (playBtn) {
+      playBtn.addEventListener("click", function (e) {
+        e.stopPropagation() // Evitar que el clic se propague al track-item
+
+        const isPlaying = track.classList.contains("playing")
+
+        // Detener todas las pistas primero
+        trackItems.forEach((t) => {
+          t.classList.remove("playing")
+        })
+
+        // Si no estaba reproduciendo, iniciar reproducción
+        if (!isPlaying) {
+          track.classList.add("playing")
+
+          // Cambiar el ícono del botón
+          this.innerHTML = '<i class="fas fa-pause"></i>'
+
+          // Simular reproducción de audio
+          const trackName = track.querySelector(".md-track-name").textContent
+          console.log(`Reproduciendo pista: ${trackName}`)
+        } else {
+          // Restaurar el ícono del botón
+          this.innerHTML = '<i class="fas fa-play"></i>'
+        }
+      })
+    }
+  })
+}
+
+// Función para inicializar el gráfico de crecimiento
+function initGrowthChart() {
+  const canvas = document.getElementById("growthChart")
+
+  if (!canvas) return
+
+  const ctx = canvas.getContext("2d")
+
+  // Datos para el gráfico (simulados)
+  const months = ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic"]
+  const data2020 = [10, 12, 15, 18, 20, 22, 25, 28, 30, 32, 35, 38]
+  const data2021 = [40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95]
+  const data2022 = [100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200, 210]
+
+  // Dibujar el gráfico
+  drawGrowthChart(ctx, months, data2020, data2021, data2022)
+}
+
+// Función para dibujar el gráfico de crecimiento
+function drawGrowthChart(ctx, labels, data2020, data2021, data2022) {
+  const width = ctx.canvas.width
+  const height = ctx.canvas.height
+
+  // Limpiar el canvas
+  ctx.clearRect(0, 0, width, height)
+
+  // Configurar el estilo
+  ctx.font = "12px Arial"
+  ctx.textAlign = "center"
+  ctx.textBaseline = "middle"
+
+  // Dibujar el fondo
+  ctx.fillStyle = "rgba(255, 255, 255, 0.05)"
+  ctx.fillRect(0, 0, width, height)
+
+  // Dibujar las líneas de la cuadrícula
+  ctx.strokeStyle = "rgba(255, 255, 255, 0.1)"
+  ctx.lineWidth = 1
+
+  // Líneas horizontales
+  for (let i = 0; i <= 5; i++) {
+    const y = height - (i / 5) * (height - 60) - 30
+
+    ctx.beginPath()
+    ctx.moveTo(50, y)
+    ctx.lineTo(width - 20, y)
+    ctx.stroke()
+
+    // Etiquetas del eje Y
+    const value = Math.round(i * 50)
+    ctx.fillStyle = "rgba(255, 255, 255, 0.7)"
+    ctx.fillText(value + "M", 25, y)
+  }
+
+  // Líneas verticales
+  const step = (width - 70) / (labels.length - 1)
+  for (let i = 0; i < labels.length; i++) {
+    const x = i * step + 50
+
+    ctx.beginPath()
+    ctx.moveTo(x, 30)
+    ctx.lineTo(x, height - 30)
+    ctx.stroke()
+
+    // Etiquetas del eje X
+    ctx.fillStyle = "rgba(255, 255, 255, 0.7)"
+    ctx.fillText(labels[i], x, height - 15)
+  }
+
+  // Dibujar las líneas de datos
+  function drawDataLine(data, color, label, yOffset) {
+    ctx.strokeStyle = color
+    ctx.lineWidth = 3
+    ctx.beginPath()
+
+    for (let i = 0; i < data.length; i++) {
+      const x = i * step + 50
+      const y = height - (data[i] / 250) * (height - 60) - 30
+
+      if (i === 0) {
+        ctx.moveTo(x, y)
+      } else {
+        ctx.lineTo(x, y)
+      }
+    }
+
+    ctx.stroke()
+
+    // Añadir etiqueta de la línea
+    ctx.fillStyle = color
+    ctx.fillText(label, width - 100, 20 + yOffset)
+
+    // Añadir puntos en los datos
+    for (let i = 0; i < data.length; i++) {
+      const x = i * step + 50
+      const y = height - (data[i] / 250) * (height - 60) - 30
+
+      ctx.beginPath()
+      ctx.arc(x, y, 4, 0, Math.PI * 2)
+      ctx.fillStyle = color
+      ctx.fill()
+
+      // Añadir valor sobre el punto para el último mes
+      if (i === data.length - 1) {
+        ctx.fillStyle = color
+        ctx.fillText(data[i] + "M", x, y - 15)
+      }
+    }
+  }
+
+  // Dibujar las tres líneas de datos
+  drawDataLine(data2020, "rgba(47, 0, 255, 0.7)", "2020", 0)
+  drawDataLine(data2021, "rgba(20, 2, 53, 0.7)", "2021", 20)
+  drawDataLine(data2022, "rgba(248, 232, 0, 0.7)", "2022", 40)
+}
+
+// Función para inicializar el mapa mundial
+function initWorldMap() {
+  const hotspots = document.querySelectorAll(".md-map-hotspot")
+  const countryName = document.querySelector(".md-country-name")
+  const countryListeners = document.querySelector(".md-country-listeners span")
+
+  hotspots.forEach((hotspot) => {
+    hotspot.addEventListener("mouseenter", function () {
+      const country = this.getAttribute("data-country")
+      const listeners = this.getAttribute("data-listeners")
+
+      countryName.textContent = country
+      countryListeners.textContent = listeners
+    })
+
+    hotspot.addEventListener("mouseleave", () => {
+      countryName.textContent = "Selecciona un país"
+      countryListeners.textContent = "-"
+    })
+  })
+}
+
+// JavaScript para la sección de Trayectoria Musical
+document.addEventListener("DOMContentLoaded", () => {
+  // Elementos de la línea de tiempo
+  const timelineMarkers = document.querySelectorAll('.timeline-marker');
+  const eraContents = document.querySelectorAll('.timeline-era-content');
+  const progressFill = document.querySelector('.timeline-progress-fill');
+  const eraText = document.querySelector('.timeline-era-text');
+  const yearsText = document.querySelector('.timeline-years');
+  const prevBtn = document.querySelector('.timeline-prev');
+  const nextBtn = document.querySelector('.timeline-next');
+  
+  // Datos de las eras
+  const eras = [
+      { id: 'kmd', name: 'Era KMD', years: '1988-1993', progress: '16.66%' },
+      { id: 'hiatus', name: 'Hiatus', years: '1993-1997', progress: '33.33%' },
+      { id: 'emergence', name: 'Emergencia', years: '1997-2003', progress: '50%' },
+      { id: 'golden', name: 'Era Dorada', years: '2003-2009', progress: '66.66%' },
+      { id: 'later', name: 'Últimos Años', years: '2009-2020', progress: '83.33%' },
+      { id: 'legacy', name: 'Legado', years: '2020-∞', progress: '100%' }
+  ];
+  
+  let currentEraIndex = 0;
+  
+  // Función para cambiar la era activa
+  function changeEra(index) {
+      // Actualizar marcadores
+      timelineMarkers.forEach(marker => marker.classList.remove('active'));
+      timelineMarkers[index].classList.add('active');
+      
+      // Actualizar contenido
+      eraContents.forEach(content => content.classList.remove('active'));
+      const targetContent = document.getElementById(`era-${eras[index].id}`);
+      if (targetContent) targetContent.classList.add('active');
+      
+      // Actualizar barra de progreso
+      progressFill.style.width = eras[index].progress;
+      
+      // Actualizar textos
+      eraText.textContent = eras[index].name;
+      yearsText.textContent = eras[index].years;
+      
+      // Actualizar índice actual
+      currentEraIndex = index;
+      
+      // Actualizar estado de los botones
+      prevBtn.disabled = currentEraIndex === 0;
+      nextBtn.disabled = currentEraIndex === eras.length - 1;
+  }
+  
+  // Eventos para los marcadores
+  timelineMarkers.forEach((marker, index) => {
+      marker.addEventListener('click', () => {
+          changeEra(index);
+      });
+  });
+  
+  // Eventos para los botones de navegación
+  if (prevBtn) {
+      prevBtn.addEventListener('click', () => {
+          if (currentEraIndex > 0) {
+              changeEra(currentEraIndex - 1);
+          }
+      });
+  }
+  
+  if (nextBtn) {
+      nextBtn.addEventListener('click', () => {
+          if (currentEraIndex < eras.length - 1) {
+              changeEra(currentEraIndex + 1);
+          }
+      });
+  }
+  
+  // Animación para las tarjetas de eventos
+  const eventCards = document.querySelectorAll('.event-card');
+  
+  const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, index) => {
+          if (entry.isIntersecting) {
+              setTimeout(() => {
+                  entry.target.classList.add('visible');
+              }, index * 150);
+              observer.unobserve(entry.target);
+          }
+      });
+  }, { threshold: 0.1 });
+  
+  eventCards.forEach((card) => {
+      card.style.opacity = '0';
+      card.style.transform = 'translateY(30px)';
+      card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+      observer.observe(card);
+  });
+  
+  // Añadir clase para animación de aparición
+  document.head.insertAdjacentHTML(
+      'beforeend',
+      `
+      <style>
+          .event-card.visible {
+              opacity: 1 !important;
+              transform: translateY(0) !important;
+          }
+      </style>
+      `
+  );
+  
+  // Inicializar con la primera era
+  changeEra(0);
+  
+  // Efecto de parallax para los álbumes
+  const albumCovers = document.querySelectorAll('.album-cover');
+  const albumVinyls = document.querySelectorAll('.album-vinyl');
+  
+  window.addEventListener('mousemove', (e) => {
+      const mouseX = e.clientX / window.innerWidth - 0.5;
+      const mouseY = e.clientY / window.innerHeight - 0.5;
+      
+      albumCovers.forEach(cover => {
+          const moveX = mouseX * 20;
+          const moveY = mouseY * 20;
+          cover.style.transform = `rotateY(${25 + moveX}deg) rotateX(${moveY}deg)`;
+      });
+      
+      albumVinyls.forEach(vinyl => {
+          const moveX = mouseX * 30;
+          const moveY = mouseY * 30;
+          vinyl.style.transform = `translateZ(-30px) translateX(${50 + moveX}px) rotateY(${25 + moveY}deg)`;
+      });
+  });
 });

@@ -440,199 +440,619 @@
             </div>
         </section>
 
-        <!-- Nueva sección: Discos Más Escuchados -->
-        <section class="top-albums-section">
+        <!-- Nueva sección: Discos Más Escuchados - Rediseño Moderno e Interactivo -->
+        <section class="music-dashboard">
+            <div class="md-background">
+                <div class="md-particles"></div>
+                <div class="md-gradient"></div>
+            </div>
+
             <div class="container">
-                <h2 class="section-title-v2">LOS MÁS ESCUCHADOS</h2>
-                <div class="top-albums-intro">
-                    <p>Estos son los álbumes y canciones de MF DOOM con mayor número de reproducciones en plataformas
-                        digitales actualmente, demostrando la permanencia de su legado musical a través del tiempo.</p>
+                <div class="md-header">
+                    <h2 class="md-title">Universo Sonoro</h2>
+                    <div class="md-subtitle">Explora el legado musical de MF DOOM a través de datos</div>
                 </div>
 
-                <div class="top-albums-grid">
-                    <!-- Madvillainy -->
-                    <div class="top-album-card">
-                        <div class="top-album-rank">01</div>
-                        <div class="top-album-cover">
-                            <img src="img/madvillainy.jpg" alt="Madvillainy" loading="lazy">
-                            <div class="top-album-play">
-                                <i class="fas fa-play"></i>
+                <!-- Panel de control principal -->
+                <div class="md-control-panel">
+                    <div class="md-stats-overview">
+                        <div class="md-stat-card">
+                            <div class="md-stat-icon">
+                                <i class="fas fa-headphones-alt"></i>
+                            </div>
+                            <div class="md-stat-content">
+                                <div class="md-stat-value" data-value="830">0M+</div>
+                                <div class="md-stat-label">Reproducciones totales</div>
+                            </div>
+                            <div class="md-stat-chart">
+                                <canvas class="md-mini-chart"></canvas>
                             </div>
                         </div>
-                        <div class="top-album-info">
-                            <h3>Madvillainy</h3>
-                            <div class="top-album-artist">Madvillain (MF DOOM & Madlib)</div>
-                            <div class="top-album-year">2004</div>
-                            <div class="top-album-stats">
-                                <div class="stat">
-                                    <i class="fab fa-spotify"></i>
-                                    <span>320M+ reproducciones</span>
-                                </div>
-                                <div class="stat">
-                                    <i class="fab fa-youtube"></i>
-                                    <span>150M+ visualizaciones</span>
-                                </div>
+
+                        <div class="md-stat-card">
+                            <div class="md-stat-icon">
+                                <i class="fas fa-globe"></i>
                             </div>
-                            <div class="top-album-tracks">
-                                <div class="top-track">
-                                    <div class="top-track-name">Accordion</div>
-                                    <div class="top-track-streams">85M+</div>
-                                </div>
-                                <div class="top-track">
-                                    <div class="top-track-name">All Caps</div>
-                                    <div class="top-track-streams">75M+</div>
-                                </div>
-                                <div class="top-track">
-                                    <div class="top-track-name">Meat Grinder</div>
-                                    <div class="top-track-streams">65M+</div>
-                                </div>
+                            <div class="md-stat-content">
+                                <div class="md-stat-value" data-value="120">0+</div>
+                                <div class="md-stat-label">Países con oyentes</div>
+                            </div>
+                            <div class="md-stat-chart">
+                                <canvas class="md-mini-chart"></canvas>
+                            </div>
+                        </div>
+
+                        <div class="md-stat-card">
+                            <div class="md-stat-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <div class="md-stat-content">
+                                <div class="md-stat-value" data-value="215">+0%</div>
+                                <div class="md-stat-label">Crecimiento desde 2020</div>
+                            </div>
+                            <div class="md-stat-chart">
+                                <canvas class="md-mini-chart"></canvas>
                             </div>
                         </div>
                     </div>
 
-                    <!-- MM.. FOOD -->
-                    <div class="top-album-card">
-                        <div class="top-album-rank">02</div>
-                        <div class="top-album-cover">
-                            <img src="img/Mmfood.jpg" alt="MM.. FOOD" loading="lazy">
-                            <div class="top-album-play">
-                                <i class="fas fa-play"></i>
-                            </div>
-                        </div>
-                        <div class="top-album-info">
-                            <h3>MM.. FOOD</h3>
-                            <div class="top-album-artist">MF DOOM</div>
-                            <div class="top-album-year">2004</div>
-                            <div class="top-album-stats">
-                                <div class="stat">
-                                    <i class="fab fa-spotify"></i>
-                                    <span>210M+ reproducciones</span>
-                                </div>
-                                <div class="stat">
-                                    <i class="fab fa-youtube"></i>
-                                    <span>95M+ visualizaciones</span>
-                                </div>
-                            </div>
-                            <div class="top-album-tracks">
-                                <div class="top-track">
-                                    <div class="top-track-name">Rapp Snitch Knishes</div>
-                                    <div class="top-track-streams">60M+</div>
-                                </div>
-                                <div class="top-track">
-                                    <div class="top-track-name">One Beer</div>
-                                    <div class="top-track-streams">45M+</div>
-                                </div>
-                                <div class="top-track">
-                                    <div class="top-track-name">Deep Fried Frenz</div>
-                                    <div class="top-track-streams">30M+</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Operation: Doomsday -->
-                    <div class="top-album-card">
-                        <div class="top-album-rank">03</div>
-                        <div class="top-album-cover">
-                            <img src="img/operation-doomsday.jpg" alt="Operation: Doomsday" loading="lazy">
-                            <div class="top-album-play">
-                                <i class="fas fa-play"></i>
-                            </div>
-                        </div>
-                        <div class="top-album-info">
-                            <h3>Operation: Doomsday</h3>
-                            <div class="top-album-artist">MF DOOM</div>
-                            <div class="top-album-year">1999</div>
-                            <div class="top-album-stats">
-                                <div class="stat">
-                                    <i class="fab fa-spotify"></i>
-                                    <span>180M+ reproducciones</span>
-                                </div>
-                                <div class="stat">
-                                    <i class="fab fa-youtube"></i>
-                                    <span>85M+ visualizaciones</span>
-                                </div>
-                            </div>
-                            <div class="top-album-tracks">
-                                <div class="top-track">
-                                    <div class="top-track-name">Doomsday</div>
-                                    <div class="top-track-streams">55M+</div>
-                                </div>
-                                <div class="top-track">
-                                    <div class="top-track-name">Rhymes Like Dimes</div>
-                                    <div class="top-track-streams">40M+</div>
-                                </div>
-                                <div class="top-track">
-                                    <div class="top-track-name">Gas Drawls</div>
-                                    <div class="top-track-streams">20M+</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- The Mouse and the Mask -->
-                    <div class="top-album-card">
-                        <div class="top-album-rank">04</div>
-                        <div class="top-album-cover">
-                            <img src="img/danger-mouse-collab.jpg" alt="The Mouse and the Mask" loading="lazy">
-                            <div class="top-album-play">
-                                <i class="fas fa-play"></i>
-                            </div>
-                        </div>
-                        <div class="top-album-info">
-                            <h3>The Mouse and the Mask</h3>
-                            <div class="top-album-artist">DANGERDOOM (MF DOOM & Danger Mouse)</div>
-                            <div class="top-album-year">2005</div>
-                            <div class="top-album-stats">
-                                <div class="stat">
-                                    <i class="fab fa-spotify"></i>
-                                    <span>120M+ reproducciones</span>
-                                </div>
-                                <div class="stat">
-                                    <i class="fab fa-youtube"></i>
-                                    <span>60M+ visualizaciones</span>
-                                </div>
-                            </div>
-                            <div class="top-album-tracks">
-                                <div class="top-track">
-                                    <div class="top-track-name">Sofa King</div>
-                                    <div class="top-track-streams">35M+</div>
-                                </div>
-                                <div class="top-track">
-                                    <div class="top-track-name">Benzie Box</div>
-                                    <div class="top-track-streams">25M+</div>
-                                </div>
-                                <div class="top-track">
-                                    <div class="top-track-name">Space Hos</div>
-                                    <div class="top-track-streams">15M+</div>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="md-platform-selector">
+                        <button class="md-platform-btn active" data-platform="all">
+                            <i class="fas fa-music"></i>
+                            <span>Todas</span>
+                        </button>
+                        <button class="md-platform-btn" data-platform="spotify">
+                            <i class="fab fa-spotify"></i>
+                            <span>Spotify</span>
+                        </button>
+                        <button class="md-platform-btn" data-platform="youtube">
+                            <i class="fab fa-youtube"></i>
+                            <span>YouTube</span>
+                        </button>
+                        <button class="md-platform-btn" data-platform="apple">
+                            <i class="fab fa-apple"></i>
+                            <span>Apple Music</span>
+                        </button>
                     </div>
                 </div>
 
-                <div class="streaming-growth">
-                    <h3>Crecimiento en Plataformas Digitales</h3>
-                    <div class="growth-stats">
-                        <div class="growth-stat">
-                            <div class="growth-icon"><i class="fas fa-chart-line"></i></div>
-                            <div class="growth-number">+215%</div>
-                            <div class="growth-label">Aumento en reproducciones desde 2020</div>
+                <!-- Visualizador 3D de álbumes -->
+                <div class="md-album-showcase">
+                    <div class="md-showcase-controls">
+                        <button class="md-control-btn md-prev-btn">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <div class="md-album-counter">
+                            <span class="md-current-album">01</span>
+                            <span class="md-album-separator">/</span>
+                            <span class="md-total-albums">04</span>
                         </div>
-                        <div class="growth-stat">
-                            <div class="growth-icon"><i class="fas fa-user-plus"></i></div>
-                            <div class="growth-number">+180%</div>
-                            <div class="growth-label">Nuevos oyentes mensuales</div>
+                        <button class="md-control-btn md-next-btn">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+
+                    <div class="md-album-carousel">
+                        <!-- Madvillainy -->
+                        <div class="md-album-item active" data-album="madvillainy">
+                            <div class="md-album-3d">
+                                <div class="md-album-cover">
+                                    <img src="img/madvillainy.jpg" alt="Madvillainy" loading="lazy">
+                                    <div class="md-album-reflection"></div>
+                                </div>
+                                <div class="md-album-vinyl">
+                                    <div class="md-vinyl-disc">
+                                        <div class="md-vinyl-label">
+                                            <span>MADVILLAIN</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="md-album-details">
+                                <div class="md-album-header">
+                                    <div class="md-album-title-section">
+                                        <div class="md-album-rank">01</div>
+                                        <div class="md-album-info">
+                                            <h3 class="md-album-title">Madvillainy</h3>
+                                            <div class="md-album-artist">Madvillain (MF DOOM & Madlib)</div>
+                                            <div class="md-album-year">2004</div>
+                                        </div>
+                                    </div>
+                                    <div class="md-album-actions">
+                                        <button class="md-action-btn md-play-btn" data-album="madvillainy">
+                                            <i class="fas fa-play"></i>
+                                        </button>
+                                        <button class="md-action-btn md-share-btn">
+                                            <i class="fas fa-share-alt"></i>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="md-album-stats">
+                                    <div class="md-stat-bar">
+                                        <div class="md-stat-icon"><i class="fab fa-spotify"></i></div>
+                                        <div class="md-stat-bar-container">
+                                            <div class="md-stat-bar-fill" style="width: 90%"></div>
+                                        </div>
+                                        <div class="md-stat-value">320M+</div>
+                                    </div>
+                                    <div class="md-stat-bar">
+                                        <div class="md-stat-icon"><i class="fab fa-youtube"></i></div>
+                                        <div class="md-stat-bar-container">
+                                            <div class="md-stat-bar-fill" style="width: 60%"></div>
+                                        </div>
+                                        <div class="md-stat-value">150M+</div>
+                                    </div>
+                                </div>
+
+                                <div class="md-top-tracks">
+                                    <h4 class="md-tracks-title">Canciones Más Escuchadas</h4>
+                                    <div class="md-tracks-list">
+                                        <div class="md-track-item">
+                                            <div class="md-track-play">
+                                                <i class="fas fa-play"></i>
+                                            </div>
+                                            <div class="md-track-info">
+                                                <div class="md-track-name">Accordion</div>
+                                                <div class="md-track-streams">85M+ reproducciones</div>
+                                            </div>
+                                            <div class="md-track-wave">
+                                                <div class="md-wave-bar"></div>
+                                                <div class="md-wave-bar"></div>
+                                                <div class="md-wave-bar"></div>
+                                                <div class="md-wave-bar"></div>
+                                                <div class="md-wave-bar"></div>
+                                            </div>
+                                        </div>
+
+                                        <div class="md-track-item">
+                                            <div class="md-track-play">
+                                                <i class="fas fa-play"></i>
+                                            </div>
+                                            <div class="md-track-info">
+                                                <div class="md-track-name">All Caps</div>
+                                                <div class="md-track-streams">75M+ reproducciones</div>
+                                            </div>
+                                            <div class="md-track-wave">
+                                                <div class="md-wave-bar"></div>
+                                                <div class="md-wave-bar"></div>
+                                                <div class="md-wave-bar"></div>
+                                                <div class="md-wave-bar"></div>
+                                                <div class="md-wave-bar"></div>
+                                            </div>
+                                        </div>
+
+                                        <div class="md-track-item">
+                                            <div class="md-track-play">
+                                                <i class="fas fa-play"></i>
+                                            </div>
+                                            <div class="md-track-info">
+                                                <div class="md-track-name">Meat Grinder</div>
+                                                <div class="md-track-streams">65M+ reproducciones</div>
+                                            </div>
+                                            <div class="md-track-wave">
+                                                <div class="md-wave-bar"></div>
+                                                <div class="md-wave-bar"></div>
+                                                <div class="md-wave-bar"></div>
+                                                <div class="md-wave-bar"></div>
+                                                <div class="md-wave-bar"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="growth-stat">
-                            <div class="growth-icon"><i class="fas fa-globe-americas"></i></div>
-                            <div class="growth-number">120+</div>
-                            <div class="growth-label">Países con oyentes activos</div>
+
+                        <!-- MM.. FOOD -->
+                        <div class="md-album-item" data-album="mmfood">
+                            <div class="md-album-3d">
+                                <div class="md-album-cover">
+                                    <img src="img/mmfood.jpg" alt="MM.. FOOD" loading="lazy">
+                                    <div class="md-album-reflection"></div>
+                                </div>
+                                <div class="md-album-vinyl">
+                                    <div class="md-vinyl-disc">
+                                        <div class="md-vinyl-label">
+                                            <span>MM.. FOOD</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="md-album-details">
+                                <div class="md-album-header">
+                                    <div class="md-album-title-section">
+                                        <div class="md-album-rank">02</div>
+                                        <div class="md-album-info">
+                                            <h3 class="md-album-title">MM.. FOOD</h3>
+                                            <div class="md-album-artist">MF DOOM</div>
+                                            <div class="md-album-year">2004</div>
+                                        </div>
+                                    </div>
+                                    <div class="md-album-actions">
+                                        <button class="md-action-btn md-play-btn" data-album="mmfood">
+                                            <i class="fas fa-play"></i>
+                                        </button>
+                                        <button class="md-action-btn md-share-btn">
+                                            <i class="fas fa-share-alt"></i>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="md-album-stats">
+                                    <div class="md-stat-bar">
+                                        <div class="md-stat-icon"><i class="fab fa-spotify"></i></div>
+                                        <div class="md-stat-bar-container">
+                                            <div class="md-stat-bar-fill" style="width: 70%"></div>
+                                        </div>
+                                        <div class="md-stat-value">210M+</div>
+                                    </div>
+                                    <div class="md-stat-bar">
+                                        <div class="md-stat-icon"><i class="fab fa-youtube"></i></div>
+                                        <div class="md-stat-bar-container">
+                                            <div class="md-stat-bar-fill" style="width: 40%"></div>
+                                        </div>
+                                        <div class="md-stat-value">95M+</div>
+                                    </div>
+                                </div>
+
+                                <div class="md-top-tracks">
+                                    <h4 class="md-tracks-title">Canciones Más Escuchadas</h4>
+                                    <div class="md-tracks-list">
+                                        <div class="md-track-item">
+                                            <div class="md-track-play">
+                                                <i class="fas fa-play"></i>
+                                            </div>
+                                            <div class="md-track-info">
+                                                <div class="md-track-name">Rapp Snitch Knishes</div>
+                                                <div class="md-track-streams">60M+ reproducciones</div>
+                                            </div>
+                                            <div class="md-track-wave">
+                                                <div class="md-wave-bar"></div>
+                                                <div class="md-wave-bar"></div>
+                                                <div class="md-wave-bar"></div>
+                                                <div class="md-wave-bar"></div>
+                                                <div class="md-wave-bar"></div>
+                                            </div>
+                                        </div>
+
+                                        <div class="md-track-item">
+                                            <div class="md-track-play">
+                                                <i class="fas fa-play"></i>
+                                            </div>
+                                            <div class="md-track-info">
+                                                <div class="md-track-name">One Beer</div>
+                                                <div class="md-track-streams">45M+ reproducciones</div>
+                                            </div>
+                                            <div class="md-track-wave">
+                                                <div class="md-wave-bar"></div>
+                                                <div class="md-wave-bar"></div>
+                                                <div class="md-wave-bar"></div>
+                                                <div class="md-wave-bar"></div>
+                                                <div class="md-wave-bar"></div>
+                                            </div>
+                                        </div>
+
+                                        <div class="md-track-item">
+                                            <div class="md-track-play">
+                                                <i class="fas fa-play"></i>
+                                            </div>
+                                            <div class="md-track-info">
+                                                <div class="md-track-name">Deep Fried Frenz</div>
+                                                <div class="md-track-streams">30M+ reproducciones</div>
+                                            </div>
+                                            <div class="md-track-wave">
+                                                <div class="md-wave-bar"></div>
+                                                <div class="md-wave-bar"></div>
+                                                <div class="md-wave-bar"></div>
+                                                <div class="md-wave-bar"></div>
+                                                <div class="md-wave-bar"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Operation: Doomsday -->
+                        <div class="md-album-item" data-album="doomsday">
+                            <div class="md-album-3d">
+                                <div class="md-album-cover">
+                                    <img src="img/operation-doomsday.jpg" alt="Operation: Doomsday" loading="lazy">
+                                    <div class="md-album-reflection"></div>
+                                </div>
+                                <div class="md-album-vinyl">
+                                    <div class="md-vinyl-disc">
+                                        <div class="md-vinyl-label">
+                                            <span>DOOMSDAY</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="md-album-details">
+                                <div class="md-album-header">
+                                    <div class="md-album-title-section">
+                                        <div class="md-album-rank">03</div>
+                                        <div class="md-album-info">
+                                            <h3 class="md-album-title">Operation: Doomsday</h3>
+                                            <div class="md-album-artist">MF DOOM</div>
+                                            <div class="md-album-year">1999</div>
+                                        </div>
+                                    </div>
+                                    <div class="md-album-actions">
+                                        <button class="md-action-btn md-play-btn" data-album="doomsday">
+                                            <i class="fas fa-play"></i>
+                                        </button>
+                                        <button class="md-action-btn md-share-btn">
+                                            <i class="fas fa-share-alt"></i>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="md-album-stats">
+                                    <div class="md-stat-bar">
+                                        <div class="md-stat-icon"><i class="fab fa-spotify"></i></div>
+                                        <div class="md-stat-bar-container">
+                                            <div class="md-stat-bar-fill" style="width: 60%"></div>
+                                        </div>
+                                        <div class="md-stat-value">180M+</div>
+                                    </div>
+                                    <div class="md-stat-bar">
+                                        <div class="md-stat-icon"><i class="fab fa-youtube"></i></div>
+                                        <div class="md-stat-bar-container">
+                                            <div class="md-stat-bar-fill" style="width: 35%"></div>
+                                        </div>
+                                        <div class="md-stat-value">85M+</div>
+                                    </div>
+                                </div>
+
+                                <div class="md-top-tracks">
+                                    <h4 class="md-tracks-title">Canciones Más Escuchadas</h4>
+                                    <div class="md-tracks-list">
+                                        <div class="md-track-item">
+                                            <div class="md-track-play">
+                                                <i class="fas fa-play"></i>
+                                            </div>
+                                            <div class="md-track-info">
+                                                <div class="md-track-name">Doomsday</div>
+                                                <div class="md-track-streams">55M+ reproducciones</div>
+                                            </div>
+                                            <div class="md-track-wave">
+                                                <div class="md-wave-bar"></div>
+                                                <div class="md-wave-bar"></div>
+                                                <div class="md-wave-bar"></div>
+                                                <div class="md-wave-bar"></div>
+                                                <div class="md-wave-bar"></div>
+                                            </div>
+                                        </div>
+
+                                        <div class="md-track-item">
+                                            <div class="md-track-play">
+                                                <i class="fas fa-play"></i>
+                                            </div>
+                                            <div class="md-track-info">
+                                                <div class="md-track-name">Rhymes Like Dimes</div>
+                                                <div class="md-track-streams">40M+ reproducciones</div>
+                                            </div>
+                                            <div class="md-track-wave">
+                                                <div class="md-wave-bar"></div>
+                                                <div class="md-wave-bar"></div>
+                                                <div class="md-wave-bar"></div>
+                                                <div class="md-wave-bar"></div>
+                                                <div class="md-wave-bar"></div>
+                                            </div>
+                                        </div>
+
+                                        <div class="md-track-item">
+                                            <div class="md-track-play">
+                                                <i class="fas fa-play"></i>
+                                            </div>
+                                            <div class="md-track-info">
+                                                <div class="md-track-name">Gas Drawls</div>
+                                                <div class="md-track-streams">20M+ reproducciones</div>
+                                            </div>
+                                            <div class="md-track-wave">
+                                                <div class="md-wave-bar"></div>
+                                                <div class="md-wave-bar"></div>
+                                                <div class="md-wave-bar"></div>
+                                                <div class="md-wave-bar"></div>
+                                                <div class="md-wave-bar"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- The Mouse and the Mask -->
+                        <div class="md-album-item" data-album="dangerdoom">
+                            <div class="md-album-3d">
+                                <div class="md-album-cover">
+                                    <img src="img/danger-mouse-collab.jpg" alt="The Mouse and the Mask" loading="lazy">
+                                    <div class="md-album-reflection"></div>
+                                </div>
+                                <div class="md-album-vinyl">
+                                    <div class="md-vinyl-disc">
+                                        <div class="md-vinyl-label">
+                                            <span>DANGERDOOM</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="md-album-details">
+                                <div class="md-album-header">
+                                    <div class="md-album-title-section">
+                                        <div class="md-album-rank">04</div>
+                                        <div class="md-album-info">
+                                            <h3 class="md-album-title">The Mouse and the Mask</h3>
+                                            <div class="md-album-artist">DANGERDOOM (MF DOOM & Danger Mouse)</div>
+                                            <div class="md-album-year">2005</div>
+                                        </div>
+                                    </div>
+                                    <div class="md-album-actions">
+                                        <button class="md-action-btn md-play-btn" data-album="dangerdoom">
+                                            <i class="fas fa-play"></i>
+                                        </button>
+                                        <button class="md-action-btn md-share-btn">
+                                            <i class="fas fa-share-alt"></i>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="md-album-stats">
+                                    <div class="md-stat-bar">
+                                        <div class="md-stat-icon"><i class="fab fa-spotify"></i></div>
+                                        <div class="md-stat-bar-container">
+                                            <div class="md-stat-bar-fill" style="width: 40%"></div>
+                                        </div>
+                                        <div class="md-stat-value">120M+</div>
+                                    </div>
+                                    <div class="md-stat-bar">
+                                        <div class="md-stat-icon"><i class="fab fa-youtube"></i></div>
+                                        <div class="md-stat-bar-container">
+                                            <div class="md-stat-bar-fill" style="width: 25%"></div>
+                                        </div>
+                                        <div class="md-stat-value">60M+</div>
+                                    </div>
+                                </div>
+
+                                <div class="md-top-tracks">
+                                    <h4 class="md-tracks-title">Canciones Más Escuchadas</h4>
+                                    <div class="md-tracks-list">
+                                        <div class="md-track-item">
+                                            <div class="md-track-play">
+                                                <i class="fas fa-play"></i>
+                                            </div>
+                                            <div class="md-track-info">
+                                                <div class="md-track-name">Sofa King</div>
+                                                <div class="md-track-streams">35M+ reproducciones</div>
+                                            </div>
+                                            <div class="md-track-wave">
+                                                <div class="md-wave-bar"></div>
+                                                <div class="md-wave-bar"></div>
+                                                <div class="md-wave-bar"></div>
+                                                <div class="md-wave-bar"></div>
+                                                <div class="md-wave-bar"></div>
+                                            </div>
+                                        </div>
+
+                                        <div class="md-track-item">
+                                            <div class="md-track-play">
+                                                <i class="fas fa-play"></i>
+                                            </div>
+                                            <div class="md-track-info">
+                                                <div class="md-track-name">Benzie Box</div>
+                                                <div class="md-track-streams">25M+ reproducciones</div>
+                                            </div>
+                                            <div class="md-track-wave">
+                                                <div class="md-wave-bar"></div>
+                                                <div class="md-wave-bar"></div>
+                                                <div class="md-wave-bar"></div>
+                                                <div class="md-wave-bar"></div>
+                                                <div class="md-wave-bar"></div>
+                                            </div>
+                                        </div>
+
+                                        <div class="md-track-item">
+                                            <div class="md-track-play">
+                                                <i class="fas fa-play"></i>
+                                            </div>
+                                            <div class="md-track-info">
+                                                <div class="md-track-name">Space Hos</div>
+                                                <div class="md-track-streams">15M+ reproducciones</div>
+                                            </div>
+                                            <div class="md-track-wave">
+                                                <div class="md-wave-bar"></div>
+                                                <div class="md-wave-bar"></div>
+                                                <div class="md-wave-bar"></div>
+                                                <div class="md-wave-bar"></div>
+                                                <div class="md-wave-bar"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Visualización de datos de crecimiento -->
+                <div class="md-growth-visualization">
+                    <h3 class="md-section-title">Evolución del Legado</h3>
+
+                    <div class="md-growth-container">
+                        <div class="md-growth-chart">
+                            <canvas id="growthChart"></canvas>
+                        </div>
+
+                        <div class="md-growth-cards">
+                            <div class="md-growth-card">
+                                <div class="md-growth-icon">
+                                    <i class="fas fa-chart-line"></i>
+                                </div>
+                                <div class="md-growth-value" data-value="215">+0%</div>
+                                <div class="md-growth-label">Aumento en reproducciones</div>
+                                <div class="md-growth-period">Desde 2020</div>
+                            </div>
+
+                            <div class="md-growth-card">
+                                <div class="md-growth-icon">
+                                    <i class="fas fa-user-plus"></i>
+                                </div>
+                                <div class="md-growth-value" data-value="180">+0%</div>
+                                <div class="md-growth-label">Nuevos oyentes mensuales</div>
+                                <div class="md-growth-period">Último año</div>
+                            </div>
+
+                            <div class="md-growth-card">
+                                <div class="md-growth-icon">
+                                    <i class="fas fa-globe-americas"></i>
+                                </div>
+                                <div class="md-growth-value" data-value="120">0+</div>
+                                <div class="md-growth-label">Países con oyentes activos</div>
+                                <div class="md-growth-period">Alcance global</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="md-world-map">
+                        <div class="md-map-container">
+                            <div class="md-map-bg"></div>
+                            <div class="md-map-hotspot" style="top: 30%; left: 20%;" data-country="Estados Unidos"
+                                data-listeners="45%">
+                                <div class="md-hotspot-pulse"></div>
+                            </div>
+                            <div class="md-map-hotspot" style="top: 25%; left: 45%;" data-country="Reino Unido"
+                                data-listeners="12%">
+                                <div class="md-hotspot-pulse"></div>
+                            </div>
+                            <div class="md-map-hotspot" style="top: 35%; left: 75%;" data-country="Japón"
+                                data-listeners="8%">
+                                <div class="md-hotspot-pulse"></div>
+                            </div>
+                            <div class="md-map-hotspot" style="top: 65%; left: 80%;" data-country="Australia"
+                                data-listeners="6%">
+                                <div class="md-hotspot-pulse"></div>
+                            </div>
+                            <div class="md-map-hotspot" style="top: 28%; left: 48%;" data-country="Alemania"
+                                data-listeners="5%">
+                                <div class="md-hotspot-pulse"></div>
+                            </div>
+
+                            <div class="md-country-info">
+                                <div class="md-country-name">Selecciona un país</div>
+                                <div class="md-country-listeners">Porcentaje de oyentes: <span>-</span></div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+
+
 
         <!-- Call to Action -->
         <section class="call-to-action">
