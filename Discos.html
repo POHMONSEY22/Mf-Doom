@@ -54,7 +54,7 @@
             <div class="hero-social">
                 <a href="https://open.spotify.com/intl-es/artist/2pAWfrd7WFF3XhVt9GooDL" class="hero-social-link"
                     target="_blank" aria-label="Spotify"><i class="fab fa-spotify"></i></a>
-                <a href="https://www.youtube.com/channel/UCzUE_TUQnQj9-9B8nLYQB6Q" class="hero-social-link"
+                <a href="https://www.youtube.com/channel/UC6Y8dX3XdGsp2akU-SKfreA" class="hero-social-link"
                     target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
                 <a href="https://www.instagram.com/mfdoom/" class="hero-social-link" target="_blank"
                     aria-label="Instagram"><i class="fab fa-instagram"></i></a>
@@ -980,68 +980,112 @@
                 </div>
 
                 <!-- Visualización de datos de crecimiento -->
-                <div class="md-growth-visualization">
+                <div class="md-growth-visualization"><br>
+                    <!-- Título debajo de la gráfica -->
                     <h3 class="md-section-title">Evolución del Legado</h3>
-
-                    <div class="md-growth-container">
-                        <div class="md-growth-chart">
-                            <canvas id="growthChart"></canvas>
+                    
+                    <!-- Gráfica interactiva a ancho completo -->
+                    <div class="legacy-chart-container">
+                        <div class="legacy-chart-header">
+                            <div class="chart-title">Evolución del Legado</div>
+                            <div class="chart-legend">
+                                <div class="legend-item">
+                                    <span class="legend-color" style="background: #9900ff;"></span>
+                                    <span class="legend-label">2020</span>
+                                </div>
+                                <div class="legend-item">
+                                    <span class="legend-color" style="background: #ff00c8;"></span>
+                                    <span class="legend-label">2021</span>
+                                </div>
+                                <div class="legend-item">
+                                    <span class="legend-color" style="background: #ffcc00;"></span>
+                                    <span class="legend-label">2022</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="legacy-chart-wrapper">
+                            <div class="chart-y-axis">
+                                <div class="y-label">250M</div>
+                                <div class="y-label">200M</div>
+                                <div class="y-label">150M</div>
+                                <div class="y-label">100M</div>
+                                <div class="y-label">50M</div>
+                                <div class="y-label">0M</div>
+                            </div>
+                            <div class="legacy-chart" id="interactiveChart">
+                                <!-- La gráfica se generará con JavaScript -->
+                            </div>
+                        </div>
+                        <div class="chart-x-axis">
+                            <div class="x-label">Ene</div>
+                            <div class="x-label">Feb</div>
+                            <div class="x-label">Mar</div>
+                            <div class="x-label">Abr</div>
+                            <div class="x-label">May</div>
+                            <div class="x-label">Jun</div>
+                            <div class="x-label">Jul</div>
+                            <div class="x-label">Ago</div>
+                            <div class="x-label">Sep</div>
+                            <div class="x-label">Oct</div>
+                            <div class="x-label">Nov</div>
+                            <div class="x-label">Dic</div>
+                        </div>
+                        <div class="chart-tooltip" id="chartTooltip">
+                            <div class="tooltip-date">Mes</div>
+                            <div class="tooltip-value">Valor</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Tarjetas en fila horizontal -->
+                    <div class="md-growth-cards">
+                        <div class="md-growth-card">
+                            <div class="md-growth-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <div class="md-growth-value" data-value="215">+0%</div>
+                            <div class="md-growth-label">Aumento en reproducciones</div>
+                            <div class="md-growth-period">Desde 2020</div>
                         </div>
 
-                        <div class="md-growth-cards">
-                            <div class="md-growth-card">
-                                <div class="md-growth-icon">
-                                    <i class="fas fa-chart-line"></i>
-                                </div>
-                                <div class="md-growth-value" data-value="215">+0%</div>
-                                <div class="md-growth-label">Aumento en reproducciones</div>
-                                <div class="md-growth-period">Desde 2020</div>
+                        <div class="md-growth-card">
+                            <div class="md-growth-icon">
+                                <i class="fas fa-user-plus"></i>
                             </div>
+                            <div class="md-growth-value" data-value="180">+0%</div>
+                            <div class="md-growth-label">Nuevos oyentes mensuales</div>
+                            <div class="md-growth-period">Último año</div>
+                        </div>
 
-                            <div class="md-growth-card">
-                                <div class="md-growth-icon">
-                                    <i class="fas fa-user-plus"></i>
-                                </div>
-                                <div class="md-growth-value" data-value="180">+0%</div>
-                                <div class="md-growth-label">Nuevos oyentes mensuales</div>
-                                <div class="md-growth-period">Último año</div>
+                        <div class="md-growth-card">
+                            <div class="md-growth-icon">
+                                <i class="fas fa-globe-americas"></i>
                             </div>
-
-                            <div class="md-growth-card">
-                                <div class="md-growth-icon">
-                                    <i class="fas fa-globe-americas"></i>
-                                </div>
-                                <div class="md-growth-value" data-value="120">0+</div>
-                                <div class="md-growth-label">Países con oyentes activos</div>
-                                <div class="md-growth-period">Alcance global</div>
-                            </div>
+                            <div class="md-growth-value" data-value="120">0+</div>
+                            <div class="md-growth-label">Países con oyentes activos</div>
+                            <div class="md-growth-period">Alcance global</div>
                         </div>
                     </div>
 
+                    <!-- Mapa mundial -->
                     <div class="md-world-map">
                         <div class="md-map-container">
                             <div class="md-map-bg"></div>
-                            <div class="md-map-hotspot" style="top: 30%; left: 20%;" data-country="Estados Unidos"
-                                data-listeners="45%">
+                            <!-- Hotspots y demás elementos del mapa se mantienen igual -->
+                            <div class="md-map-hotspot" style="top: 30%; left: 25%;" data-country="Estados Unidos" data-listeners="45%">
                                 <div class="md-hotspot-pulse"></div>
                             </div>
-                            <div class="md-map-hotspot" style="top: 25%; left: 45%;" data-country="Reino Unido"
-                                data-listeners="12%">
+                            <div class="md-map-hotspot" style="top: 25%; left: 45%;" data-country="Reino Unido" data-listeners="12%">
                                 <div class="md-hotspot-pulse"></div>
                             </div>
-                            <div class="md-map-hotspot" style="top: 35%; left: 75%;" data-country="Japón"
-                                data-listeners="8%">
+                            <div class="md-map-hotspot" style="top: 35%; left: 72%;" data-country="Japón" data-listeners="8%">
                                 <div class="md-hotspot-pulse"></div>
                             </div>
-                            <div class="md-map-hotspot" style="top: 65%; left: 80%;" data-country="Australia"
-                                data-listeners="6%">
+                            <div class="md-map-hotspot" style="top: 65%; left: 72%;" data-country="Australia" data-listeners="6%">
                                 <div class="md-hotspot-pulse"></div>
                             </div>
-                            <div class="md-map-hotspot" style="top: 28%; left: 48%;" data-country="Alemania"
-                                data-listeners="5%">
+                            <div class="md-map-hotspot" style="top: 28%; left: 48%;" data-country="Alemania" data-listeners="5%">
                                 <div class="md-hotspot-pulse"></div>
                             </div>
-
                             <div class="md-country-info">
                                 <div class="md-country-name">Selecciona un país</div>
                                 <div class="md-country-listeners">Porcentaje de oyentes: <span>-</span></div>

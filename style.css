@@ -2718,7 +2718,6 @@ section {
 }
 
 @keyframes waveAnimation {
-
     0%,
     100% {
         height: 15px;
@@ -2729,20 +2728,25 @@ section {
     }
 }
 
-/* Visualización de datos de crecimiento */
+/* Visualización de datos de crecimiento - SECCIÓN ACTUALIZADA */
 .md-growth-visualization {
     position: relative;
     z-index: 2;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+    text-align: center;
 }
 
+/* Título debajo del reproductor, no encima */
 .md-section-title {
-    font-size: 2.5rem;
+    font-size: 3.5rem;
     color: #fff;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
     text-align: center;
     position: relative;
     display: inline-block;
     padding-bottom: 1rem;
+    margin-top: 2rem;
 }
 
 .md-section-title::after {
@@ -2756,26 +2760,179 @@ section {
     border-radius: 1.5px;
 }
 
-.md-growth-container {
-    display: flex;
-    gap: 3rem;
-    margin-bottom: 4rem;
-}
 
-.md-growth-chart {
-    flex: 1;
-    height: 300px;
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 20px;
+/* Estilos actualizados para la gráfica interactiva */
+.legacy-chart-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto 4rem;
     padding: 2rem;
+    background: rgba(20, 20, 20, 0.7);
+    border-radius: 20px;
     border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    position: relative;
 }
 
-.md-growth-cards {
-    flex: 0 0 350px;
+.legacy-chart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.chart-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #fff;
+    text-shadow: 0 0 10px rgba(153, 0, 255, 0.5);
+}
+
+.chart-legend {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.legend-color {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    display: block;
+}
+
+.legend-label {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.legacy-chart-wrapper {
+    display: flex;
+    height: 400px;
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.chart-y-axis {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    justify-content: space-between;
+    padding-right: 1rem;
+    width: 60px;
+}
+
+.y-label {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.6);
+    text-align: right;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.legacy-chart {
+    flex: 1;
+    position: relative;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.chart-x-axis {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 60px;
+}
+
+.x-label {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.6);
+    text-align: center;
+    flex: 1;
+}
+
+.data-point {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.data-point:hover {
+    transform: translate(-50%, -50%) scale(1.5);
+    box-shadow: 0 0 15px currentColor;
+}
+
+.chart-tooltip {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    padding: 1rem;
+    min-width: 150px;
+    pointer-events: none;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 10;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.chart-tooltip.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.tooltip-date {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 0.5rem;
+}
+
+.tooltip-value {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+.tooltip-year {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.tooltip-year-color {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+/* Líneas de cuadrícula */
+.grid-line {
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.1);
+    left: 0;
+}
+
+/* Tarjetas en fila horizontal */
+.md-growth-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-bottom: 3rem;
 }
 
 .md-growth-card {
@@ -2925,13 +3082,8 @@ section {
         align-items: center;
     }
 
-    .md-growth-container {
-        flex-direction: column;
-    }
-
     .md-growth-cards {
-        flex-direction: row;
-        flex: 1;
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 
@@ -2958,7 +3110,11 @@ section {
     }
 
     .md-growth-cards {
-        flex-direction: column;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .md-growth-chart-container {
+        height: 350px;
     }
 }
 
@@ -3003,6 +3159,16 @@ section {
         align-self: flex-end;
     }
 
+    .md-growth-cards {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .md-growth-chart-container {
+        height: 300px;
+        padding: 1.5rem;
+    }
+    
     .md-world-map {
         height: 300px;
     }
@@ -3045,8 +3211,26 @@ section {
     .md-track-wave {
         display: none;
     }
+    
+    .md-growth-chart-container {
+        height: 250px;
+        padding: 1rem;
+    }
+    
+    .md-growth-card {
+        padding: 1.5rem;
+    }
+    
+    .md-growth-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+    }
+    
+    .md-growth-value {
+        font-size: 2rem;
+    }
 }
-
 
 /* Universo Sonoro */
 /* Estilos para la sección Universo Sonoro */

@@ -2172,3 +2172,170 @@ document.addEventListener("DOMContentLoaded", () => {
       });
   });
 });
+
+// Código JavaScript mejorado para la gráfica interactiva
+document.addEventListener("DOMContentLoaded", function() {
+  // Datos para la gráfica
+  const chartData = {
+      months: ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic"],
+      data2020: [10, 15, 20, 25, 30, 35, 38, 40, 42, 45, 48, 50],
+      data2021: [55, 60, 65, 70, 75, 80, 85, 90, 95, 100, 105, 110],
+      data2022: [120, 130, 140, 150, 160, 170, 180, 190, 200, 210, 220, 230]
+  };
+
+  // Inicializar la gráfica
+  initInteractiveChart(chartData);
+});
+
+function initInteractiveChart(data) {
+  const chartElement = document.getElementById('interactiveChart');
+  const tooltip = document.getElementById('chartTooltip');
+  
+  if (!chartElement || !tooltip) return;
+  
+  // Limpiar el contenedor
+  chartElement.innerHTML = '';
+  
+  // Añadir líneas de cuadrícula
+  const gridLinesCount = 6; // 0M, 50M, 100M, 150M, 200M, 250M
+  for (let i = 0; i < gridLinesCount; i++) {
+      const position = 100 - (i * (100 / (gridLinesCount - 1)));
+      const gridLine = document.createElement('div');
+      gridLine.className = 'grid-line';
+      gridLine.style.top = `${position}%`;
+      chartElement.appendChild(gridLine);
+  }
+  
+  // Encontrar el valor máximo para escalar correctamente
+  const maxValue = Math.max(
+      ...data.data2020,
+      ...data.data2021,
+      ...data.data2022
+  );
+  
+  // Crear líneas SVG que conectan los puntos
+  const svgContainer = document.createElement('svg');
+  svgContainer.setAttribute('width', '100%');
+  svgContainer.setAttribute('height', '100%');
+  svgContainer.style.position = 'absolute';
+  svgContainer.style.top = '0';
+  svgContainer.style.left = '0';
+  svgContainer.style.zIndex = '1';
+  chartElement.appendChild(svgContainer);
+  
+  // Crear líneas de datos con SVG
+  createSVGLine(svgContainer, data.months, data.data2020, maxValue, '#9900ff');
+  createSVGLine(svgContainer, data.months, data.data2021, maxValue, '#ff00c8');
+  createSVGLine(svgContainer, data.months, data.data2022, maxValue, '#ffcc00');
+  
+  // Crear puntos de datos
+  createDataPoints(chartElement, data.months, data.data2020, maxValue, '#9900ff', '2020');
+  createDataPoints(chartElement, data.months, data.data2021, maxValue, '#ff00c8', '2021');
+  createDataPoints(chartElement, data.months, data.data2022, maxValue, '#ffcc00', '2022');
+  
+  // Manejar eventos de tooltip
+  const dataPoints = chartElement.querySelectorAll('.data-point');
+  dataPoints.forEach(point => {
+      point.addEventListener('mouseenter', function(e) {
+          const month = this.getAttribute('data-month');
+          const value = this.getAttribute('data-value');
+          const year = this.getAttribute('data-year');
+          const color = this.style.backgroundColor;
+          
+          // Actualizar contenido del tooltip
+          tooltip.innerHTML = `
+              <div class="tooltip-date">${month} ${year}</div>
+              <div class="tooltip-value">${value}M</div>
+          `;
+          
+          // Posicionar tooltip
+          const rect = this.getBoundingClientRect();
+          const chartRect = chartElement.getBoundingClientRect();
+          
+          tooltip.style.left = `${rect.left - chartRect.left + window.scrollX}px`;
+          tooltip.style.top = `${rect.top - chartRect.top - 70 + window.scrollY}px`;
+          
+          // Mostrar tooltip
+          tooltip.classList.add('visible');
+      });
+      
+      point.addEventListener('mouseleave', function() {
+          tooltip.classList.remove('visible');
+      });
+  });
+}
+
+function createSVGLine(svgContainer, months, dataPoints, maxValue, color) {
+  // Crear el elemento path para la línea
+  const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+  
+  // Construir el string del path
+  let pathData = '';
+  
+  dataPoints.forEach((value, index) => {
+      // Calcular posiciones
+      const xPos = (index / (months.length - 1)) * 100;
+      const yPos = 100 - (value / maxValue) * 100;
+      
+      // Añadir al path
+      if (index === 0) {
+          pathData += `M${xPos},${yPos} `;
+      } else {
+          pathData += `L${xPos},${yPos} `;
+      }
+  });
+  
+  // Establecer atributos del path
+  path.setAttribute('d', pathData);
+  path.setAttribute('fill', 'none');
+  path.setAttribute('stroke', color);
+  path.setAttribute('stroke-width', '3');
+  path.setAttribute('stroke-linecap', 'round');
+  path.setAttribute('stroke-linejoin', 'round');
+  
+  // Añadir efecto de brillo
+  path.setAttribute('filter', 'drop-shadow(0 0 3px ' + color + ')');
+  
+  // Añadir animación de trazado
+  path.style.strokeDasharray = path.getTotalLength();
+  path.style.strokeDashoffset = path.getTotalLength();
+  path.style.animation = 'drawLine 1.5s ease-in-out forwards';
+  
+  // Añadir el path al SVG
+  svgContainer.appendChild(path);
+  
+  // Añadir estilo para la animación
+  const style = document.createElement('style');
+  style.textContent = `
+      @keyframes drawLine {
+          to {
+              stroke-dashoffset: 0;
+          }
+      }
+  `;
+  document.head.appendChild(style);
+}
+
+function createDataPoints(chartElement, months, dataPoints, maxValue, color, year) {
+  // Crear puntos de datos
+  dataPoints.forEach((value, index) => {
+      const point = document.createElement('div');
+      point.className = 'data-point';
+      point.style.backgroundColor = color;
+      point.style.boxShadow = `0 0 10px ${color}`;
+      
+      // Posicionar el punto
+      const xPos = (index / (months.length - 1)) * 100;
+      const yPos = 100 - (value / maxValue) * 100;
+      
+      point.style.left = `${xPos}%`;
+      point.style.top = `${yPos}%`;
+      
+      // Añadir datos para el tooltip
+      point.setAttribute('data-month', months[index]);
+      point.setAttribute('data-value', value);
+      point.setAttribute('data-year', year);
+      
+      chartElement.appendChild(point);
+  });
+}
